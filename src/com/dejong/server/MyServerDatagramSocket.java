@@ -1,5 +1,7 @@
 package com.dejong.server;
 
+import com.dejong.utils.ClientServerDatagramSocket;
+
 import java.net.*;
 import java.io.*;
 
@@ -13,27 +15,24 @@ import java.io.*;
  *
  **/
 
-public class MyServerDatagramSocket extends DatagramSocket {
+public class MyServerDatagramSocket extends ClientServerDatagramSocket {
 
     static final int MAX_LEN = 100;
+
+    MyServerDatagramSocket() throws SocketException {
+        super();
+    }
 
     MyServerDatagramSocket(int port) throws SocketException {
         super(port);
     }
 
     public void sendMessage(InetAddress receiverHost, int receiverPort, String message) throws IOException {
-        byte[] sendBuffer = message.getBytes();
-        DatagramPacket datagram = new DatagramPacket(sendBuffer, sendBuffer.length, receiverHost, receiverPort);
-        this.send(datagram);
+        super.sendMessage(receiverHost, receiverPort, message);
     } //end sendMessage
 
     public String receiveMessage() throws IOException {
-        byte[] receiveBuffer = new byte[MAX_LEN];
-        DatagramPacket datagram = new DatagramPacket(receiveBuffer, MAX_LEN);
-        this.receive(datagram);
-
-        String message = new String(receiveBuffer);
-        return message;
+        return super.receiveMessage();
     } //end receiveMessage
 
     public DatagramMessage receiveMessageAndSender() throws IOException {
