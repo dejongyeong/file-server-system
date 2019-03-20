@@ -64,7 +64,6 @@ public class ServerUtilities {
                 SeedUsers.save(users);
 
                 System.out.println(dir.toString() + " has been created");
-
                 return "501: User created: " + username  + ". Please log in.";
             } else {
                 return "502: User already exist. Please logged in";
@@ -73,4 +72,14 @@ public class ServerUtilities {
 
         return "502: User already exist. Please logged in.";
     } //end register
+
+    public static String logout(String username) {
+        if(checkIsLoggedIn(username)) {
+            TrackLoginUsers.logout(username);
+            System.out.println("401: User " + username + " logged out");
+            return "401: User logged out successfully.";
+        } else {
+            return "402: User " + username + " not logged in.";
+        } //end if
+    }
 }

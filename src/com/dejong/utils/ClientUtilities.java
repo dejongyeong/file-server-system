@@ -52,7 +52,7 @@ public class ClientUtilities {
      */
     public static String logout(String username) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
-        String message = "500" + ", " + username;
+        String message = "400" + ", " + username;
         String echo = helper.send(message);
         return echo;
     }

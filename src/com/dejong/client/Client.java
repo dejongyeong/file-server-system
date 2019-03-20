@@ -30,7 +30,7 @@ public class Client {
             //program loop
             while(!done) {
                 System.out.println("\n\n---------- Enter option -----------\n" +
-                        "1. Login\n" + "2. Register\n" + "5. Logout" +
+                        "1. Login\n" + "2. Register\n" + "5. Logout\n" +
                         "6. Quit/Disconnect");
                 String option = br.readLine();
                 switch(option) {

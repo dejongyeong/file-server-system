@@ -34,7 +34,7 @@ public class FileTransferServer {
         //variables
         String code;
         String username;
-        String password;
+        String password = "";
         String response;
 
         try {
@@ -49,11 +49,14 @@ public class FileTransferServer {
                 System.out.println("message received: " + message);
 
                 //decode message format: "300, username, password" documented in documentation and remove whitespace.
+                //handle different message format: "400, username"
                 //references: https://www.mkyong.com/java/java-how-to-split-a-string/
                 String[] messages = message.split(",");
                 code = messages[0].trim();
                 username = messages[1].trim();
-                password = messages[2].trim();
+                if(messages.length == 3) {
+                    password = messages[2].trim();
+                } //end if
 
                 //invoke methods based on message types
                 //300 login; 500 register; 400 logout;
@@ -61,6 +64,11 @@ public class FileTransferServer {
                     case "300":
                         System.out.println("Server: Log In");
                         response = ServerUtilities.login(username, password);
+                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        break;
+                    case "400":
+                        System.out.println("Server: Log Out");
+                        response = ServerUtilities.logout(username);
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     case "500":
