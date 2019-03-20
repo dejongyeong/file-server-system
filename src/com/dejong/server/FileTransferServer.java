@@ -35,6 +35,7 @@ public class FileTransferServer {
         String code;
         String username;
         String password;
+        String response;
 
         try {
             socket = new MyServerDatagramSocket(serverPort);
@@ -55,11 +56,16 @@ public class FileTransferServer {
                 password = messages[2].trim();
 
                 //invoke methods based on message types
-                //300 login
+                //300 login; 500 register; 400 logout;
                 switch (code) {
                     case "300":
                         System.out.println("Server: Log In");
-                        String response = ServerUtilities.login(username, password);
+                        response = ServerUtilities.login(username, password);
+                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        break;
+                    case "500":
+                        System.out.println("Server: Register");
+                        response = ServerUtilities.register(username, password);
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     default:
@@ -67,6 +73,9 @@ public class FileTransferServer {
                         response = "900: System error. Please try again!";
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                 } //end switch
+
+                //list of all logged in users
+                ServerUtilities.listOfLoggedInUsers();
             } //end while
         } catch (Exception ex) {
             ex.printStackTrace();

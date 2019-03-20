@@ -19,6 +19,8 @@ public class Client {
         String port = "3000"; // default port
         boolean done = false;
         String message, serverResponse;
+        String username;
+        String password;
 
         try {
 
@@ -28,22 +30,45 @@ public class Client {
             //program loop
             while(!done) {
                 System.out.println("\n\n---------- Enter option -----------\n" +
-                        "1. Login\n" + "2. Logout\n" + "3. Quit");
+                        "1. Login\n" + "2. Register\n" + "5. Logout" +
+                        "6. Quit/Disconnect");
                 String option = br.readLine();
                 switch(option) {
                     case "1":
                         System.out.println("Prepare to log in");
                         System.out.println("Enter username: ");
-                        String username = br.readLine();
+                        username = br.readLine();
                         System.out.println("Enter password: ");
-                        String password = br.readLine();
+                        password = br.readLine();
                         if(username.trim().length() == 0 || password.trim().length() == 0) {
                             throw new RuntimeException("Username and Password must not be empty.");
                         }
                         serverResponse = ClientUtilities.login(username, password);
                         System.out.println(serverResponse);
                         break;
-                    case "3":
+                    case "2":
+                        System.out.println("Prepare to register");
+                        System.out.println("Enter username");
+                        username = br.readLine();
+                        System.out.println("Enter password");
+                        password = br.readLine();
+                        if(username.trim().length() == 0 || password.trim().length() == 0) {
+                            throw new RuntimeException("Username and Password must not be empty.");
+                        }
+                        serverResponse = ClientUtilities.register(username, password);
+                        System.out.println(serverResponse);
+                        break;
+                    case "5":
+                        System.out.println("Prepare to logout");
+                        System.out.println("Enter username");
+                        username = br.readLine();
+                        if(username.trim().length() == 0) {
+                            throw new RuntimeException("Username and Password must not be empty.");
+                        }
+                        serverResponse = ClientUtilities.logout(username);
+                        System.out.println(serverResponse);
+                        break;
+                    case "6":
                         System.out.println("Quitting");
                         helper.done();  //close socket
                         done = true;  //break loop

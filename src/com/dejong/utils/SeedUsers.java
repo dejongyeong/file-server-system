@@ -8,6 +8,7 @@ public class SeedUsers {
     public static void main(String args[]) throws IOException {
         List<Users> users = seedUsers();
         save(users);
+        makeFolder(users);
     }
 
     // generate users
@@ -22,8 +23,12 @@ public class SeedUsers {
         return users;
     } // end seed users
 
-    // output seed users into users.dat
-    private static void save(List<Users> users) throws IOException {
+    /**
+     * This method is used output seed users into users.dat
+     * @param users list of users to be saved
+     * @throws IOException
+     */
+    public static void save(List<Users> users) throws IOException {
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("users.dat"));
         oos.writeObject(users);
         oos.close();
@@ -46,4 +51,17 @@ public class SeedUsers {
         }
         return users;
     } // end open
+
+    //create unique folder
+    private static void makeFolder(List<Users> users) {
+        String path = "C://DC//"; //main path to store unique folder
+        File dir;
+
+        for(Users u: users) {
+           dir = new File(path + u.getUsername());
+           if(dir.mkdirs()) {
+               System.out.println(dir.toString() + " has been created");
+           }
+        } //end for
+    } //end make folder
 }
