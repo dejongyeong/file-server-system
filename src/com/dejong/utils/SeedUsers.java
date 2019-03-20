@@ -1,8 +1,6 @@
 package com.dejong.utils;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.*;
 
 public class SeedUsers {
@@ -30,4 +28,22 @@ public class SeedUsers {
         oos.writeObject(users);
         oos.close();
     } // end save
+
+    /**
+     * This method is used to open data.
+     * @return a list of seeded users.
+     */
+    public static List<Users> open() {
+        List<Users> users = null;
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("users.dat"));
+            users = (ArrayList<Users>) ois.readObject();
+            ois.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("File not found. Please run SeedUsers module");
+        } catch (Exception ex) {
+            System.out.println("900: System Error");
+        }
+        return users;
+    } // end open
 }

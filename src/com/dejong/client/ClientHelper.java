@@ -21,7 +21,7 @@ public class ClientHelper {
     private InetAddress serverHost;
     private int serverPort;
 
-    ClientHelper(String hostname, String portNum) throws SocketException, UnknownHostException {
+    public ClientHelper(String hostname, String portNum) throws SocketException, UnknownHostException {
         this.serverHost = InetAddress.getByName(hostname);
         this.serverPort = Integer.parseInt(portNum);
 
@@ -29,7 +29,7 @@ public class ClientHelper {
         this.mySocket = new MyClientDatagramSocket();
     }
 
-    public String getEcho(String message) throws SocketException, IOException {
+    public String send(String message) throws SocketException, IOException {
         String echo = "";
         mySocket.sendMessage(serverHost, serverPort, message);
 
