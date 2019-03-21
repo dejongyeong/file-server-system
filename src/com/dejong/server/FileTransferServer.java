@@ -43,8 +43,18 @@ public class FileTransferServer {
         String response;
 
         try {
+            //ssl secure communication
+            KeyStore ks = KeyStore.getInstance("JKS");
+            ks.load(new FileInputStream(keystoreFile), keyStorePwd.toCharArray());
+
+            KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509"); // Type of Certificate
+            kmf.init(ks, keyStorePwd.toCharArray());
+
+            SSLContext sc = SSLContext.getInstance("TLS");
+            sc.init(kmf.getKeyManagers(), null, null);
+
             socket = new MyServerDatagramSocket(serverPort);
-            System.out.println("File Management Server ready.");
+            System.out.println("\n\n------File Management Server ready------");
 
             while(true) { //loop forever
                 //send and receive data

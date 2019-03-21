@@ -11,14 +11,23 @@ import java.io.InputStreamReader;
  */
 
 public class Client {
+
+    //keystore details
+    static String keystoreFile = "public.jks";
+    static String keyStorePwd = "ittralee";
+
     public static void main(String args[]) {
+        //ssl communication
+        System.setProperty("javax.net.ssl.keyStore", keystoreFile);
+        System.setProperty("javax.net.ssl.keyStorePassword", keyStorePwd);
+        System.setProperty("javax.net.debug", "all");
 
         //variables
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String hostname = "localhost"; // default hostname
         String port = "3000"; // default port
         boolean done = false;
-        String message, serverResponse;
+        String serverResponse;
         String username;
         String password;
 
