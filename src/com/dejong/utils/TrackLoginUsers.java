@@ -11,21 +11,23 @@ import java.util.*;
 
 public class TrackLoginUsers {
 
-    private static List<Users> loginUsers = new ArrayList<>();
+    static List<Users> loginUsers = new ArrayList<>();
 
     //track logged in users
     public static void trackLoginUsers(Users user) {
         loginUsers.add(user);
     }
 
-    //retrieve a list of logged in users
-    public static List<Users> getLoginUsers() {
-        return loginUsers;
-    }
-
     //logout users
     public static void logout(String username) {
-        loginUsers.remove(username);
+        Users user = null;
+        for(Users u: loginUsers) {
+            if(username.equals(u.getUsername())) {
+                user = new Users(u.getUsername(), u.getPassword());
+                break;
+            }
+        }
+        loginUsers.remove(user);
     }
 
     //check if user is logged in
@@ -37,5 +39,4 @@ public class TrackLoginUsers {
         }
         return isLogin;
     }
-
 }

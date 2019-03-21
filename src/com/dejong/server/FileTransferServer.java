@@ -1,6 +1,7 @@
 package com.dejong.server;
 
 import com.dejong.utils.ServerUtilities;
+import com.dejong.utils.TrackLoginUsers;
 
 import javax.net.ssl.*;
 import java.io.FileInputStream;
@@ -96,9 +97,6 @@ public class FileTransferServer {
                         response = "900: System error. Please try again!";
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                 } //end switch
-
-                //list of all logged in users
-                ServerUtilities.listOfLoggedInUsers();
             } //end while
         } catch (Exception ex) {
             ex.printStackTrace();

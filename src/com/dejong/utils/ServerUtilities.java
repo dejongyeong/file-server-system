@@ -13,7 +13,7 @@ public class ServerUtilities {
         users = SeedUsers.open();
 
         //check if user is logged in
-        if(checkIsLoggedIn(username)) {
+        if(TrackLoginUsers.isLoggedIn(username)) {
             return "303: " + username + " is logged in";
         }
 
@@ -26,27 +26,6 @@ public class ServerUtilities {
 
         return "302: Credentials entered incorrect or user not exist."; //server response
     } //end login
-
-    //check user is logged in
-    public static boolean checkIsLoggedIn(String username) {
-        List<Users> loggedInUsers = TrackLoginUsers.getLoginUsers();
-        boolean loggedIn = false;
-        for(Users u: loggedInUsers) {
-            if(username.equals(u.getUsername())) {
-                loggedIn = true;
-            }
-        }
-        return loggedIn;
-    } //end check log in
-
-    //list of all logged in users
-    public static void listOfLoggedInUsers() {
-        String loggedIn = "";
-        for(Users u: TrackLoginUsers.getLoginUsers()) {
-            loggedIn += u.getUsername() + ", ";
-        }
-        System.out.println("Logged In Users: " + loggedIn);
-    }
 
     //user register
     public static String register(String username, String password) throws IOException {
@@ -75,7 +54,7 @@ public class ServerUtilities {
 
     //logout user
     public static String logout(String username) {
-        if(checkIsLoggedIn(username)) {
+        if(TrackLoginUsers.isLoggedIn(username)) {
             TrackLoginUsers.logout(username);
             System.out.println("401: User " + username + " logged out");
             return "401: User logged out successfully.";

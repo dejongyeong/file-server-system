@@ -15,7 +15,6 @@ public class ClientUtilities {
 
     private static String hostname = "localhost";
     private static String port = "3000";
-
     /**
      * Client login utility class.
      * @param username username of client.
