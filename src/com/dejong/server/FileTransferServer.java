@@ -1,13 +1,11 @@
 package com.dejong.server;
 
-import com.dejong.utils.SeedUsers;
 import com.dejong.utils.ServerUtilities;
-import com.dejong.utils.TrackLoginUsers;
-import com.dejong.utils.Users;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.util.List;
+import javax.net.ssl.*;
+import java.io.FileInputStream;
+import java.net.DatagramSocket;
+import java.security.KeyStore;
 
 /**
  * This module contains application logic of file transfer server which uses connectionless datagram socket of IPC.
@@ -24,12 +22,19 @@ import java.util.List;
 
 public class FileTransferServer {
 
-    // variables
+    //variables
+    static String hostname = "localhost";
     static int serverPort = 3000; // default port
     static MyServerDatagramSocket socket;
+    static String keystoreFile = "fms.jks";
+    static String keyStorePwd = "ittralee";
 
-    // main method to run server.
+    //main method to run server.
     public static void main(String[] args) {
+        //ssl communication
+        System.setProperty("javax.net.ssl.keyStore", keystoreFile);
+        System.setProperty("javax.net.ssl.keyStorePassword", keyStorePwd);
+        System.setProperty("javax.net.debug", "all");
 
         //variables
         String code;
@@ -88,6 +93,5 @@ public class FileTransferServer {
         } catch (Exception ex) {
             ex.printStackTrace();
         } //end catch
-
     } //end main
 } //end class

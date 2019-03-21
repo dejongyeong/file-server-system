@@ -29,16 +29,14 @@ public class ClientHelper {
         this.mySocket = new MyClientDatagramSocket();
     }
 
-    public String send(String message) throws SocketException, IOException {
-        String echo = "";
+    public String send(String message) throws IOException {
         mySocket.sendMessage(serverHost, serverPort, message);
 
         // receive echo
-        echo = mySocket.receiveMessage();
-        return echo;
+        return mySocket.receiveMessage();
     } // end receive echo/message
 
-    public void done() throws SocketException {
+    public void done() {
         mySocket.close();
     }
 }

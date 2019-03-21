@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d74565fe-516b-4a41-b90c-355a415ebd85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fmsclient.jks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.dat" beforeDir="false" afterPath="$PROJECT_DIR$/users.dat" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,42 +19,46 @@
     <session id="1423473276">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.42" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.52" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ClientServerDatagramSocket" value="1" />
-          <entry key="dejong" value="1" />
+          <entry key="JavaScript-modules-diagram/D:/IT Tralee/Year 4 - Semester 2/Distributed Computing/file-server-system/src/com/dejong" value="1" />
+          <entry key="client" value="2" />
+          <entry key="dejong" value="2" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="89" />
+          <entry key="java" value="158" />
           <entry key="puml" value="2" />
-          <entry key="server" value="1" />
+          <entry key="server" value="2" />
+          <entry key="utils" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Git file" value="1" />
-          <entry key="JAVA" value="89" />
+          <entry key="JAVA" value="158" />
           <entry key="PlantUML file" value="2" />
-          <entry key="UML" value="3" />
+          <entry key="UML" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="java" value="14046" />
+          <entry key="java" value="17952" />
           <entry key="puml" value="333" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14046" />
+          <entry key="JAVA" value="17952" />
           <entry key="PLAIN_TEXT" value="72" />
           <entry key="PlantUML file" value="333" />
         </counts>
@@ -64,24 +66,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
+        <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dejong/client/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+            <state relative-caret-position="240">
+              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,21 +100,23 @@
         <option value="$PROJECT_DIR$/src/com/dejong/client/EchoClient1.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/EchoClientHelper1.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/EchoClient.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/file-server-system.puml" />
         <option value="$PROJECT_DIR$/src/file-server-system.puml" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/Users.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/Test.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/LoginRegisterException.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/Client.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" />
+        <option value="$PROJECT_DIR$/src/com/ssl/Server.java" />
+        <option value="$PROJECT_DIR$/src/com/ssl/Client.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" />
       </list>
     </option>
   </component>
@@ -134,9 +126,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1189" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="658" />
+    <option name="y" value="-18" />
+    <option name="width" value="978" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
@@ -144,8 +137,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,7 +187,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553112935291" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553189316330" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
@@ -215,13 +208,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dejong.client.Client" />
+  <component name="RunManager" selected="Application.FileTransferServer">
+    <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ssl.Client" />
       <module name="file-server-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dejong.client.*" />
+          <option name="PATTERN" value="com.ssl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -229,8 +222,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EchoClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dejong.client.EchoClient" />
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dejong.client.Client" />
       <module name="file-server-system" />
       <extension name="coverage">
         <pattern>
@@ -268,12 +261,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dejong.utils.Test" />
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ssl.Server" />
       <module name="file-server-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dejong.utils.*" />
+          <option name="PATTERN" value="com.ssl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -283,18 +276,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.FileTransferServer" />
-      <item itemvalue="Application.EchoClient" />
       <item itemvalue="Application.SeedUsers" />
       <item itemvalue="Application.Client" />
-      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.FileTransferServer" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Client (1)" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.SeedUsers" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.EchoClient" />
       </list>
     </recent_temporary>
   </component>
@@ -311,12 +304,13 @@
       <workItem from="1552770988342" duration="2158000" />
       <workItem from="1552921690260" duration="5033000" />
       <workItem from="1552930888114" duration="189000" />
-      <workItem from="1553097089809" duration="13649000" />
+      <workItem from="1553097089809" duration="21818000" />
+      <workItem from="1553182558471" duration="7027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21029000" />
+    <option name="totallyTimeSpent" value="36225000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -328,10 +322,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="951" height="840" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27160493" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15033557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -340,7 +334,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32803467" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32456142" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3236994" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -374,62 +368,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/com/dejong/client/EchoClientHelper1.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/DatagramMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/client/EchoClient1.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/client/EchoClient.java" />
-    <entry file="uml://JAVA/com.dejong">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.dejong</OriginalElement>
-          <nodes>
-            <node x="" y="">com.dejong.server</node>
-            <node x="" y="">com.dejong.client</node>
-            <node x="" y="">com.dejong.utils</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="119.0" y="54.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/file-server-system.puml" />
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/file-server-system.puml" />
     <entry file="uml://JAVA/com.dejong.utils.ClientServerDatagramSocket">
       <provider selected="true" editor-type-id="UmlEditorProvider">
@@ -471,19 +412,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/com.dejong.server">
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/Test.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding>
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/LoginRegisterException.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/D:/IT Tralee/Year 4 - Semester 2/Distributed Computing/file-server-system/src/com/dejong">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/com/dejong</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="598.0" y="321.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Overview</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.dejong">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>JAVA</ID>
-          <OriginalElement>com.dejong.server</OriginalElement>
+          <OriginalElement>com.dejong</OriginalElement>
           <nodes>
-            <node x="" y="">com.dejong.server.MyServerDatagramSocket</node>
-            <node x="" y="">com.dejong.server.DatagramMessage</node>
-            <node x="" y="">com.dejong.server.FileTransferServer</node>
+            <node x="" y="">com.dejong.server</node>
+            <node x="" y="">com.dejong.client</node>
+            <node x="" y="">com.dejong.utils</node>
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="93.0" y="89.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="119.0" y="54.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
@@ -497,99 +486,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java">
+    <entry file="uml://JAVA/com.dejong.utils">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.dejong.utils</OriginalElement>
+          <nodes>
+            <node x="" y="">com.dejong.utils.TrackLoginUsers</node>
+            <node x="" y="">com.dejong.utils.ClientUtilities</node>
+            <node x="" y="">com.dejong.utils.SeedUsers</node>
+            <node x="" y="">com.dejong.utils.ClientServerDatagramSocket</node>
+            <node x="" y="">com.dejong.utils.Users</node>
+            <node x="" y="">com.dejong.utils.ServerUtilities</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="142.0" y="274.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.dejong.server">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.dejong.server</OriginalElement>
+          <nodes>
+            <node x="" y="">com.dejong.server.MyServerDatagramSocket</node>
+            <node x="" y="">com.dejong.server.DatagramMessage</node>
+            <node x="" y="">com.dejong.server.FileTransferServer</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="181.0" y="239.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.dejong.client">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.dejong.client</OriginalElement>
+          <nodes>
+            <node x="" y="">com.dejong.utils.TrackLoginUsers</node>
+            <node x="" y="">com.dejong.server.MyServerDatagramSocket</node>
+            <node x="" y="">com.dejong.client.MyClientDatagramSocket</node>
+            <node x="" y="">com.dejong.utils.ClientUtilities</node>
+            <node x="" y="">com.dejong.server.DatagramMessage</node>
+            <node x="" y="">com.dejong.utils.SeedUsers</node>
+            <node x="" y="">com.dejong.client.ClientHelper</node>
+            <node x="" y="">com.dejong.utils.ClientServerDatagramSocket</node>
+            <node x="" y="">com.dejong.utils.Users</node>
+            <node x="" y="">com.dejong.utils.ServerUtilities</node>
+            <node x="" y="">com.dejong.client.Client</node>
+            <node x="" y="">com.dejong.server.FileTransferServer</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0300683371298405" x="554.0" y="291.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/DatagramMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        <state relative-caret-position="255">
+          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ssl/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ssl/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="72" column="30" lean-forward="true" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/LoginRegisterException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding>
-            <element signature="e#287#288#0" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+        <state relative-caret-position="168">
+          <caret line="14" column="28" selection-start-line="33" selection-start-column="8" selection-end-line="34" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -598,8 +605,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        <state relative-caret-position="252">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

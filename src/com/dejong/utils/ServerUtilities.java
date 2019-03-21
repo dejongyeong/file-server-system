@@ -73,6 +73,7 @@ public class ServerUtilities {
         return "502: User already exist. Please logged in.";
     } //end register
 
+    //logout user
     public static String logout(String username) {
         if(checkIsLoggedIn(username)) {
             TrackLoginUsers.logout(username);
@@ -81,5 +82,5 @@ public class ServerUtilities {
         } else {
             return "402: User " + username + " not logged in.";
         } //end if
-    }
+    } //end logout
 }
