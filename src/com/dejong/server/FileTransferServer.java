@@ -66,7 +66,7 @@ public class FileTransferServer {
                 //decode message format: "300, username, password" documented in documentation and remove whitespace.
                 //handle different message format: "400, username"
                 //references: https://www.mkyong.com/java/java-how-to-split-a-string/
-                String[] messages = message.split(",");
+                String[] messages = message.split(" ");
                 code = messages[0].trim();
                 username = messages[1].trim();
                 if(messages.length == 3) {
