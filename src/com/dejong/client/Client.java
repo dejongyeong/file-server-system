@@ -25,7 +25,7 @@ public class Client {
         //variables
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String hostname = "localhost"; // default hostname
-        String port = "3000"; // default port
+        String port = "7"; // default port
         boolean done = false;
         String serverResponse;
         String username;

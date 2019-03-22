@@ -14,7 +14,7 @@ import java.io.IOException;
 public class ClientUtilities {
 
     private static String hostname = "localhost";
-    private static String port = "3000";
+    private static String port = "7";
     /**
      * Client login utility class.
      * @param username username of client.

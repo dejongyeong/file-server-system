@@ -25,7 +25,7 @@ public class FileTransferServer {
 
     //variables
     static String hostname = "localhost";
-    static int serverPort = 3000; // default port
+    static int serverPort = 7; // default port
     static MyServerDatagramSocket socket;
     static String keystoreFile = "fms.jks";
     static String keyStorePwd = "ittralee";
