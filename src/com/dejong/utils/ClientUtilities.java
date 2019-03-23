@@ -31,6 +31,19 @@ public class ClientUtilities {
     }
 
     /**
+     * Client logout from server.
+     * @param username username of client.
+     * @return server response in string.
+     * @throws IOException
+     */
+    public static String logout(String username) throws IOException {
+        ClientHelper helper = new ClientHelper(hostname, port);
+        String message = "400" + " " + username; //client message to server
+        String echo = helper.send(message);
+        return echo;
+    }
+
+    /**
      * Client register utility class.
      * @param username username of client.
      * @param password password of client.
@@ -45,19 +58,6 @@ public class ClientUtilities {
     }
 
     /**
-     * Client logout from server.
-     * @param username username of client.
-     * @return server response in string.
-     * @throws IOException
-     */
-    public static String logout(String username) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
-        String message = "400" + " " + username; //client message to server
-        String echo = helper.send(message);
-        return echo;
-    }
-
-    /**
      * Client upload to his/her unique folder
      * @param username username of client.
      * @param filename filename to be uploaded
@@ -66,7 +66,7 @@ public class ClientUtilities {
      */
     public static String upload(String username, String filename) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
-        String message = "500" + " " + username + " " + filename;
+        String message = "600" + " " + username + " " + filename;
         String echo = helper.send(message);
         return echo;
     }

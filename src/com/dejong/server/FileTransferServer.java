@@ -40,8 +40,9 @@ public class FileTransferServer {
         //variables
         String code;
         String username;
-        String password = "";
+        String password;
         String response;
+        String filename;
 
         try {
             //ssl secure communication
@@ -70,15 +71,13 @@ public class FileTransferServer {
                 String[] messages = message.split(" ");
                 code = messages[0].trim();
                 username = messages[1].trim();
-                if(messages.length == 3) {
-                    password = messages[2].trim();
-                } //end if
 
                 //invoke methods based on message types
                 //300 login; 500 register; 400 logout;
                 switch (code) {
                     case "300":
                         System.out.println("Server: Log In");
+                        password = messages[2].trim();
                         response = ServerUtilities.login(username, password);
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
@@ -89,7 +88,14 @@ public class FileTransferServer {
                         break;
                     case "500":
                         System.out.println("Server: Register");
+                        password = messages[2].trim();
                         response = ServerUtilities.register(username, password);
+                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        break;
+                    case "600":
+                        System.out.println("Server: Upload");
+                        filename = messages[2].trim();
+                        response = ServerUtilities.upload(username, filename);
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     default:
