@@ -15,6 +15,7 @@ public class ClientUtilities {
 
     private static String hostname = "localhost";
     private static String port = "7";
+
     /**
      * Client login utility class.
      * @param username username of client.
@@ -24,7 +25,7 @@ public class ClientUtilities {
      */
     public static String login(String username, String password) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
-        String message = "300" + " " + username + " " + password;
+        String message = "300" + " " + username + " " + password; //client message to server
         String echo = helper.send(message);
         return echo;
     }
@@ -38,7 +39,7 @@ public class ClientUtilities {
      */
     public static String register(String username, String password) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
-        String message = "500" + " " + username + " " + password;
+        String message = "500" + " " + username + " " + password; //client message to server
         String echo = helper.send(message);
         return echo;
     }
@@ -51,7 +52,7 @@ public class ClientUtilities {
      */
     public static String logout(String username) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
-        String message = "400" + " " + username;
+        String message = "400" + " " + username; //client message to server
         String echo = helper.send(message);
         return echo;
     }

@@ -18,6 +18,16 @@ public class TrackLoginUsers {
         loginUsers.add(user);
     }
 
+    //check if user is logged in
+    public static boolean isLoggedIn(String username) {
+        boolean isLogin = false;
+        for(Users u: loginUsers) {
+            if(username.trim().equals(u.getUsername()))
+                isLogin = true;
+        }
+        return isLogin;
+    }
+
     //logout users
     public static void logout(String username) {
         Users user = null;
@@ -28,15 +38,5 @@ public class TrackLoginUsers {
             }
         }
         loginUsers.remove(user);
-    }
-
-    //check if user is logged in
-    public static boolean isLoggedIn(String username) {
-        boolean isLogin = false;
-        for(Users u: loginUsers) {
-            if(username.trim().equals(u.getUsername()))
-                isLogin = true;
-        }
-        return isLogin;
     }
 }
