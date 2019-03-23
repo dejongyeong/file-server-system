@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d74565fe-516b-4a41-b90c-355a415ebd85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.dat" beforeDir="false" afterPath="$PROJECT_DIR$/users.dat" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +17,7 @@
     <session id="1423473276">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.33" value="1" />
@@ -26,8 +25,9 @@
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.52" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -37,7 +37,7 @@
           <entry key="client" value="2" />
           <entry key="dejong" value="2" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="227" />
+          <entry key="java" value="229" />
           <entry key="md" value="1" />
           <entry key="puml" value="2" />
           <entry key="server" value="2" />
@@ -47,7 +47,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Git file" value="2" />
-          <entry key="JAVA" value="227" />
+          <entry key="JAVA" value="229" />
           <entry key="Markdown" value="1" />
           <entry key="PlantUML file" value="2" />
           <entry key="UML" value="9" />
@@ -56,13 +56,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="java" value="19562" />
+          <entry key="java" value="20024" />
           <entry key="puml" value="333" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="19562" />
+          <entry key="JAVA" value="20024" />
           <entry key="PLAIN_TEXT" value="72" />
           <entry key="PlantUML file" value="333" />
         </counts>
@@ -70,27 +70,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dejong/client/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
+        <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="51" column="74" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -122,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/file-server-system.puml" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/Users.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/Test.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/LoginRegisterException.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/ssl/Server.java" />
@@ -133,6 +117,7 @@
         <option value="$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java" />
       </list>
     </option>
   </component>
@@ -142,7 +127,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1050" />
@@ -152,6 +137,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,8 +182,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -205,7 +190,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553301052999" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553366955438" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
@@ -226,7 +211,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.SeedUsers">
     <configuration name="Client (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ssl.Client" />
       <module name="file-server-system" />
@@ -301,11 +286,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SeedUsers" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.FileTransferServer" />
         <item itemvalue="Application.Client (1)" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.SeedUsers" />
       </list>
     </recent_temporary>
   </component>
@@ -326,12 +311,13 @@
       <workItem from="1553182558471" duration="7358000" />
       <workItem from="1553191394119" duration="8940000" />
       <workItem from="1553266896569" duration="3141000" />
-      <workItem from="1553295253165" duration="3862000" />
+      <workItem from="1553295253165" duration="4546000" />
+      <workItem from="1553365396033" duration="1552000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52499000" />
+    <option name="totallyTimeSpent" value="54735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -343,10 +329,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-6" y="0" width="781" height="840" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.39196676" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -355,15 +341,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3260234" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37138727" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37134504" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32947975" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3251445" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32456142" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32658958" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.3260234" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -627,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -662,10 +641,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+        <state relative-caret-position="528">
+          <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -682,13 +661,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
+        <state relative-caret-position="416">
+          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="51" column="74" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
         </state>
       </provider>
     </entry>

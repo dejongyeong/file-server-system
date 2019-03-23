@@ -1,6 +1,9 @@
 package com.dejong.utils;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class SeedUsers {
@@ -9,6 +12,7 @@ public class SeedUsers {
         List<Users> users = seedUsers();
         save(users);
         makeFolder(users);
+        makeFiles();
     }
 
     // generate users
@@ -45,7 +49,7 @@ public class SeedUsers {
             users = (ArrayList<Users>) ois.readObject();
             ois.close();
         } catch (FileNotFoundException ex) {
-            System.out.println("File not found. Please run SeedUsers module");
+            System.out.println("File not found. Please run SeedUsers class");
         } catch (Exception ex) {
             System.out.println("900: System Error");
         }
@@ -64,4 +68,18 @@ public class SeedUsers {
            }
         } //end for
     } //end make folder
+
+    //seed files from code
+    //reference: https://howtodoinjava.com/java/io/how-to-create-a-new-file-in-java/
+    private static void makeFiles() {
+        String path = "C://DC//";  //main path to store files
+        String filename = "test.txt";
+        String data = "Hello World! This is a test file.";
+        try {
+            Files.write(Paths.get(path + filename), data.getBytes(StandardCharsets.UTF_8)); //create new files
+            System.out.println("Test files created.");
+        } catch(Exception ex) {
+            System.out.println("Failed to create test files.");
+        }
+    }
 }
