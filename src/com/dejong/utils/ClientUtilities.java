@@ -57,4 +57,18 @@ public class ClientUtilities {
         return echo;
     }
 
+    /**
+     * Client upload to his/her unique folder
+     * @param username username of client.
+     * @param filename filename to be uploaded
+     * @return server response in string.
+     * @throws IOException
+     */
+    public static String upload(String username, String filename) throws IOException {
+        ClientHelper helper = new ClientHelper(hostname, port);
+        String message = "500" + " " + username + " " + filename;
+        String echo = helper.send(message);
+        return echo;
+    }
+
 }

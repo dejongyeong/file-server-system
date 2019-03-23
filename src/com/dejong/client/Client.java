@@ -1,8 +1,10 @@
 package com.dejong.client;
 
 import com.dejong.utils.ClientUtilities;
+import com.dejong.utils.TrackLoginUsers;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -30,6 +32,7 @@ public class Client {
         String serverResponse;
         String username;
         String password;
+        String filename;
 
         try {
 
@@ -39,8 +42,8 @@ public class Client {
             //program loop
             while(!done) {
                 System.out.println("\n\n---------- Enter option -----------\n" +
-                        "1. Login\n" + "2. Register\n" + "5. Logout\n" +
-                        "6. Quit/Disconnect");
+                        "1. Login\n" + "2. Register\n" + "3. Upload\n" + "4. Download\n" +
+                        "5. Logout\n" + "6. Quit/Disconnect");
                 String option = br.readLine();
                 switch(option) {
                     case "1":
@@ -67,6 +70,21 @@ public class Client {
                         serverResponse = ClientUtilities.register(username, password);
                         System.out.println(serverResponse);
                         break;
+                    case "3":
+                        System.out.println("Prepare to upload - Ensure file is in C:\\DC\\");
+                        System.out.println("Enter username");
+                        username = br.readLine();
+                        System.out.println("Enter filename");
+                        filename = br.readLine();
+                        String filetype = filetype(); //prompt user for file format
+                        if(username.trim().length() == 0 || filename.trim().length() == 0 || filetype.trim().length() == 0) {
+                            throw new RuntimeException("Username, filename and file format must not be empty.");
+                        }
+                        String file = filename + filetype;
+                        System.out.println("File to upload: " + file);
+                        serverResponse = ClientUtilities.upload(username, file);
+                        System.out.println(serverResponse);
+                        break;
                     case "5":
                         System.out.println("Prepare to logout");
                         System.out.println("Enter username");
@@ -91,4 +109,24 @@ public class Client {
             ex.printStackTrace();
         } //end catch
     } //end main
+
+    //prompt user for file type
+    private static String filetype() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String filetype = "";
+        System.out.println("File Format Option:\n1. .txt\n2. .docx");
+        String option = br.readLine();
+        switch(option) {
+            case "1":
+                filetype = ".txt";
+                break;
+            case "2":
+                filetype = ".docx";
+                break;
+            default:
+                System.out.println("Invalid option! Please try again.");
+                break;
+        } //end switch
+        return filetype;
+    }
 } //end class
