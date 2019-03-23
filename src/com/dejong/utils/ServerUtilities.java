@@ -3,6 +3,7 @@ package com.dejong.utils;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -65,21 +66,21 @@ public class ServerUtilities {
     //upload
     //references: https://howtodoinjava.com/java/io/how-to-check-if-file-exists-in-java/
     //references: https://www.baeldung.com/java-read-file
-    //references: https://stackoverflow.com/questions/28977308/read-all-lines-with-bufferedreader
+    //references: https://howtodoinjava.com/java/io/how-to-read-file-content-into-byte-array-in-java/
     public static String upload(String username, String filename) throws IOException {
         String path = "C:\\DC\\";
-        File file = new File(path + filename);
         //check if user is logged in
         if(! TrackLoginUsers.isLoggedIn(username)) {
             return "602 User " + username + " not logged in. Please log in.";
         }
         //check if file exists
-        if(! file.exists()) {
+        if(! new File(path + filename).exists()) {
             return "603: File C:\\DC\\" + filename + " not found.";
         }
-        //upload to user unique directory.
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String data = reader.lines().collect(Collectors.joining());  //read from file.
+        //read from file and upload to user unique directory.
+        Path filePath = Paths.get(path + filename);
+        byte[] content = Files.readAllBytes(filePath);
+        String data = new String(content);
         String userPath = path + username + "\\" + filename; //user unique directory path.
         //create new files in user unique folder to represent as upload.
         Files.write(Paths.get(userPath), data.getBytes(StandardCharsets.UTF_8));
