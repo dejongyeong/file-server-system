@@ -10,18 +10,10 @@ import java.util.*;
  */
 
 public class TrackLoginUsers {
-
-    static List<Users> loginUsers = new ArrayList<>();
-
-    //track logged in users
-    public static void trackLoginUsers(Users user) {
-        loginUsers.add(user);
-    }
-
     //check if user is logged in
-    public static boolean isLoggedIn(String username) {
+    public static boolean isLoggedIn(List<Users> users, String username) {
         boolean isLogin = false;
-        for(Users u: loginUsers) {
+        for(Users u: users) {
             if(username.trim().equals(u.getUsername()))
                 isLogin = true;
         }
@@ -29,14 +21,15 @@ public class TrackLoginUsers {
     }
 
     //logout users
-    public static void logout(String username) {
+    public static List<Users> logout(List<Users> users, String username) {
         Users user = null;
-        for(Users u: loginUsers) {
+        for(Users u: users) {
             if(username.equals(u.getUsername())) {
                 user = new Users(u.getUsername(), u.getPassword());
                 break;
             }
         }
-        loginUsers.remove(user);
+        users.remove(user);
+        return users;
     }
 }

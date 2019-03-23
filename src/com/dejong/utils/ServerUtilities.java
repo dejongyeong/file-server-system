@@ -5,24 +5,25 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ServerUtilities {
 
     private static List<Users> users;
+    private static List<Users> loginUsers = new ArrayList<>();
 
     //login
     public static String login(String username, String password) {
         users = SeedUsers.open();
         //check if user is logged in
-        if(TrackLoginUsers.isLoggedIn(username)) {
+        if(TrackLoginUsers.isLoggedIn(loginUsers, username)) {
             return "303: " + username + " is logged in"; //server response
         } //end if
 
         for(Users u: users) {
             if(username.equals(u.getUsername()) && password.equals(u.getPassword())) {
-                TrackLoginUsers.trackLoginUsers(new Users(username, password));
+                loginUsers.add(new Users(username, password));
                 return "301: " + username + " found and logged in."; //server response to client
             }
         } //end for loop
@@ -54,13 +55,12 @@ public class ServerUtilities {
 
     //logout user
     public static String logout(String username) {
-        if(TrackLoginUsers.isLoggedIn(username)) {
-            TrackLoginUsers.logout(username);
-            System.out.println("401: User " + username + " logged out");
-            return "401: User logged out successfully."; //server response to client
-        } else {
+        if(! TrackLoginUsers.isLoggedIn(loginUsers, username)) {
             return "402: User " + username + " not logged in."; //server response to client
-        } //end if
+        }
+        loginUsers = TrackLoginUsers.logout(loginUsers, username);
+        System.out.println("User " + username + " logged out");
+        return "401: User logged out successfully."; //server response to client
     } //end logout
 
     //upload
@@ -70,7 +70,7 @@ public class ServerUtilities {
     public static String upload(String username, String filename) throws IOException {
         String path = "C:\\DC\\";
         //check if user is logged in
-        if(! TrackLoginUsers.isLoggedIn(username)) {
+        if(! TrackLoginUsers.isLoggedIn(loginUsers, username)) {
             return "602 User " + username + " not logged in. Please log in.";
         }
         //check if file exists
