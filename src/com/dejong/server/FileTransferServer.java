@@ -22,7 +22,6 @@ import java.security.KeyStore;
 public class FileTransferServer {
 
     //variables
-    static String hostname = "localhost";
     static int serverPort = 7; // default port
     static MyServerDatagramSocket socket;
     static String keystoreFile = "fms.jks";
@@ -71,7 +70,7 @@ public class FileTransferServer {
                 username = messages[1].trim();
 
                 //invoke methods based on message types
-                //300 login; 500 register; 400 logout;
+                //300 login; 500 register; 400 logout; 600 upload; 700 download;
                 switch (code) {
                     case "300":
                         System.out.println("Server: Log In");

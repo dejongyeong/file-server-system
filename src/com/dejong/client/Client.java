@@ -26,8 +26,6 @@ public class Client {
 
         //variables
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String hostname = "localhost"; // default hostname
-        String port = "7"; // default port
         boolean done = false;
         String serverResponse;
         String username;
@@ -39,7 +37,6 @@ public class Client {
         try {
 
             System.out.println("Welcome to File Management System!!");
-            ClientHelper helper = new ClientHelper(hostname, port);
 
             //program loop
             while(!done) {
@@ -114,7 +111,7 @@ public class Client {
                         break;
                     case "6":
                         System.out.println("Quitting");
-                        helper.done();  //close socket
+                        ClientUtilities.shutdown();  //close socket
                         done = true;  //break loop
                         break;
                     default:

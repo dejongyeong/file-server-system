@@ -84,4 +84,13 @@ public class ClientUtilities {
         String echo = helper.send(message);
         return echo;
     }
+
+    /**
+     * Client disconnect from server, shutdown client.
+     * @throws IOException
+     */
+    public static void shutdown() throws IOException {
+        ClientHelper helper = new ClientHelper(hostname, port);
+        helper.done();
+    }
 } //end class
