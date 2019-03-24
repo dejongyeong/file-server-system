@@ -97,7 +97,7 @@ public class ServerUtilities {
         }
         //check if file exists in user home directory
         if(! new File(path + filename).exists()) {
-            return "603: File " + path + filename + " not found.";
+            return "703: File " + path + filename + " not found.";
         }
         //check if download folder exists in user home directory
         if(! downloadFolder.exists()) {

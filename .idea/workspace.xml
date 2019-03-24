@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d74565fe-516b-4a41-b90c-355a415ebd85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +36,7 @@
           <entry key="client" value="2" />
           <entry key="dejong" value="2" />
           <entry key="gitignore" value="2" />
-          <entry key="java" value="255" />
+          <entry key="java" value="257" />
           <entry key="md" value="1" />
           <entry key="puml" value="2" />
           <entry key="server" value="2" />
@@ -49,7 +46,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Git file" value="2" />
-          <entry key="JAVA" value="255" />
+          <entry key="JAVA" value="257" />
           <entry key="Markdown" value="1" />
           <entry key="PlantUML file" value="2" />
           <entry key="UML" value="9" />
@@ -58,13 +55,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="java" value="25916" />
+          <entry key="java" value="25918" />
           <entry key="puml" value="333" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="25916" />
+          <entry key="JAVA" value="25918" />
           <entry key="PLAIN_TEXT" value="72" />
           <entry key="PlantUML file" value="333" />
         </counts>
@@ -73,20 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1308">
-              <caret line="109" column="89" selection-start-line="109" selection-start-column="89" selection-end-line="109" selection-end-column="89" />
+            <state relative-caret-position="181">
+              <caret line="99" column="21" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,8 +118,8 @@
         <option value="$PROJECT_DIR$/src/com/dejong/utils/TrackLoginUsers.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/Client.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java" />
       </list>
     </option>
   </component>
@@ -204,7 +192,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553385807946" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553385914917" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
@@ -326,12 +314,12 @@
       <workItem from="1553191394119" duration="8940000" />
       <workItem from="1553266896569" duration="3141000" />
       <workItem from="1553295253165" duration="4546000" />
-      <workItem from="1553365396033" duration="12353000" />
+      <workItem from="1553365396033" duration="12457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65536000" />
+    <option name="totallyTimeSpent" value="65640000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,7 +334,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18053691" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18053691" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -361,7 +349,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32947975" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3230994" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32225433" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3260234" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32894737" />
@@ -706,15 +694,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        <state relative-caret-position="-1079">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ServerUtilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1308">
-          <caret line="109" column="89" selection-start-line="109" selection-start-column="89" selection-end-line="109" selection-end-column="89" />
+        <state relative-caret-position="181">
+          <caret line="99" column="21" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
