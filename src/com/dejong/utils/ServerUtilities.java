@@ -33,7 +33,7 @@ public class ServerUtilities {
     //user register
     //references: https://stackoverflow.com/questions/3634853/how-to-create-a-directory-in-java/3634879
     public static String register(String username, String password) throws IOException {
-        String path = "C://DC//"; //main path to store unique folder
+        String path = "C:\\DC\\"; //main path to store unique folder
         File dir = new File(path + username);
 
         if(!dir.exists()) {
@@ -86,4 +86,31 @@ public class ServerUtilities {
         Files.write(Paths.get(userPath), data.getBytes(StandardCharsets.UTF_8));
         return "601: File " + userPath + " uploaded."; //server response to client.
     } //end upload
-}
+
+    //download
+    public static String download(String username, String filename) throws IOException {
+        String path = "C:\\DC\\" + username + "\\";
+        File downloadFolder = new File(path + "download");
+        //check if user is logged in
+        if(! TrackLoginUsers.isLoggedIn(loginUsers, username)) {
+            return "702 User " + username + " not logged in. Please log in.";
+        }
+        //check if file exists in user home directory
+        if(! new File(path + filename).exists()) {
+            return "603: File " + path + filename + " not found.";
+        }
+        //check if download folder exists in user home directory
+        if(! downloadFolder.exists()) {
+            downloadFolder.mkdirs(); //create download directory.
+        }
+        //read from file in home directory and store into download directory
+        Path filePath = Paths.get(path + filename);
+        byte[] content = Files.readAllBytes(filePath);
+        String data = new String(content);
+        String downloadPath = path + "download" + "\\" + filename; //user download folder
+        //create new files in download folder to represent as download
+        Files.write(Paths.get(downloadPath), data.getBytes(StandardCharsets.UTF_8));
+        return "701: File " + path + "\\" + filename + " downloaded to download folder.";
+    } //end download
+
+} // end class

@@ -1,8 +1,6 @@
 package com.dejong.server;
 
 import com.dejong.utils.ServerUtilities;
-import com.dejong.utils.TrackLoginUsers;
-import com.dejong.utils.Users;
 
 import javax.net.ssl.*;
 import java.io.FileInputStream;
@@ -96,6 +94,12 @@ public class FileTransferServer {
                         System.out.println("Server: Upload");
                         filename = messages[2].trim();
                         response = ServerUtilities.upload(username, filename);
+                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        break;
+                    case "700":
+                        System.out.println("Server: Download");
+                        filename = messages[2].trim();
+                        response = ServerUtilities.download(username, filename);
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     default:

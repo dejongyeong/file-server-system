@@ -25,11 +25,11 @@ public class TrackLoginUsers {
         Users user = null;
         for(Users u: users) {
             if(username.equals(u.getUsername())) {
-                user = new Users(u.getUsername(), u.getPassword());
+                user = new Users(u.getUsername(), u.getPassword());  //create log out user
                 break;
             }
         }
-        users.remove(user);
+        users.remove(user);  //remove users from list of logged in users
         return users;
     }
 }

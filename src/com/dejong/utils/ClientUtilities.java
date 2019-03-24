@@ -58,9 +58,9 @@ public class ClientUtilities {
     }
 
     /**
-     * Client upload to his/her unique folder
+     * Client upload to his/her unique folder.
      * @param username username of client.
-     * @param filename filename to be uploaded
+     * @param filename filename to be uploaded.
      * @return server response in string.
      * @throws IOException
      */
@@ -71,4 +71,17 @@ public class ClientUtilities {
         return echo;
     }
 
-}
+    /**
+     * Client download to his/her download folder in user unique folder.
+     * @param username username of client.
+     * @param filename filename to be downloaded.
+     * @return server response in string.
+     * @throws IOException
+     */
+    public static String download(String username, String filename) throws IOException {
+        ClientHelper helper = new ClientHelper(hostname, port);
+        String message = "700" + " " + username + " " + filename;
+        String echo = helper.send(message);
+        return echo;
+    }
+} //end class

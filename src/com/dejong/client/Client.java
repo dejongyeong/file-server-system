@@ -33,6 +33,8 @@ public class Client {
         String username;
         String password;
         String filename;
+        String filetype;
+        String file;
 
         try {
 
@@ -76,13 +78,28 @@ public class Client {
                         username = br.readLine();
                         System.out.println("Enter filename");
                         filename = br.readLine();
-                        String filetype = filetype(); //prompt user for file format
+                        filetype = filetype(); //prompt user for file format
                         if(username.trim().length() == 0 || filename.trim().length() == 0 || filetype.trim().length() == 0) {
                             throw new RuntimeException("Username, filename and file format must not be empty.");
                         }
-                        String file = filename + filetype;
+                        file = filename + filetype;
                         System.out.println("File to upload: " + file);
                         serverResponse = ClientUtilities.upload(username, file);
+                        System.out.println(serverResponse);
+                        break;
+                    case "4":
+                        System.out.println("Prepare to download - Ensure file is in C:\\DC\\username");
+                        System.out.println("Enter username");
+                        username = br.readLine();
+                        System.out.println("Enter filename");
+                        filename = br.readLine();
+                        filetype = filetype();
+                        if(username.trim().length() == 0 || filename.trim().length() == 0 || filetype.trim().length() == 0) {
+                            throw new RuntimeException("Username, filename and file format must not be empty.");
+                        }
+                        file = filename + filetype;
+                        System.out.println("File to download: " + file);
+                        serverResponse = ClientUtilities.download(username, file);
                         System.out.println(serverResponse);
                         break;
                     case "5":
