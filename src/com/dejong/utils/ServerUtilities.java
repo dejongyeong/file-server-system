@@ -58,7 +58,7 @@ public class ServerUtilities {
             System.out.println("User " + username + " not logged in");
             return "402: User " + username + " not logged in."; //server response to client
         }
-        loginUsers = TrackLoginUsers.logout(loginUsers, username);
+        loginUsers = TrackLoginUsers.logout(loginUsers, username); //remove logout user from list of logged-in user
         System.out.println("User " + username + " logged out");
         return "401: User logged out successfully."; //server response to client
     } //end logout

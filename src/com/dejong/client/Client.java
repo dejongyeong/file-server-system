@@ -74,7 +74,8 @@ public class Client {
                         System.out.println("Enter password: ");
                         password = br.readLine();
                         if(username.trim().length() == 0 || password.trim().length() == 0) {
-                            throw new RuntimeException("Username and Password must not be empty.");
+                            System.out.println("Username and Password must not be empty.");
+                            break;
                         }
                         serverResponse = ClientUtilities.login(username, password);
                         System.out.println(serverResponse);
@@ -86,7 +87,8 @@ public class Client {
                         System.out.println("Enter password");
                         password = br.readLine();
                         if(username.trim().length() == 0 || password.trim().length() == 0) {
-                            throw new RuntimeException("Username and Password must not be empty.");
+                            System.out.println("Username and Password must not be empty.");
+                            break;
                         }
                         serverResponse = ClientUtilities.register(username, password);
                         System.out.println(serverResponse);
@@ -99,7 +101,8 @@ public class Client {
                         filename = br.readLine();
                         filetype = filetype(); //prompt user for file format
                         if(username.trim().length() == 0 || filename.trim().length() == 0 || filetype.trim().length() == 0) {
-                            throw new RuntimeException("Username, filename and file format must not be empty.");
+                            System.out.println("Username, filename and file format must not be empty.");
+                            break;
                         }
                         file = filename + filetype;
                         System.out.println("File to upload: " + file);
@@ -114,7 +117,8 @@ public class Client {
                         filename = br.readLine();
                         filetype = filetype();
                         if(username.trim().length() == 0 || filename.trim().length() == 0 || filetype.trim().length() == 0) {
-                            throw new RuntimeException("Username, filename and file format must not be empty.");
+                            System.out.println("Username, filename and file format must not be empty.");
+                            break;
                         }
                         file = filename + filetype;
                         System.out.println("File to download: " + file);
@@ -126,7 +130,8 @@ public class Client {
                         System.out.println("Enter username");
                         username = br.readLine();
                         if(username.trim().length() == 0) {
-                            throw new RuntimeException("Username and Password must not be empty.");
+                            System.out.println("Username and Password must not be empty.");
+                            break;
                         }
                         serverResponse = ClientUtilities.logout(username);
                         System.out.println(serverResponse);

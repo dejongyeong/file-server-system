@@ -1,10 +1,13 @@
 package com.dejong.server;
 
+import com.dejong.utils.SeedUsers;
 import com.dejong.utils.ServerUtilities;
+import com.dejong.utils.Users;
 
 import javax.net.ssl.*;
 import java.io.FileInputStream;
 import java.security.KeyStore;
+import java.util.List;
 
 /**
  * This module contains application logic of file transfer server which uses connectionless datagram socket of IPC.
@@ -62,6 +65,9 @@ public class FileTransferServer {
 
             socket = new MyServerDatagramSocket(serverPort);
             System.out.println("\n------File Management Server ready------");
+
+            //display list of users in server
+            displayListOfUsers();
 
             while(true) { //loop forever
                 //send and receive data
@@ -123,4 +129,13 @@ public class FileTransferServer {
             ex.printStackTrace();
         } //end catch
     } //end main
+
+    private static void displayListOfUsers() {
+        List<Users> users = SeedUsers.open();
+        System.out.println("List of Users:");
+        for(Users u: users) {
+            System.out.println(u.getUsername() + " " + u.getPassword());
+        }
+        System.out.println();
+    }
 } //end class
