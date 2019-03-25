@@ -32,7 +32,9 @@ public class FileTransferServer {
         //ssl communication
         System.setProperty("javax.net.ssl.keyStore", keystoreFile);
         System.setProperty("javax.net.ssl.keyStorePassword", keyStorePwd);
-        System.setProperty("javax.net.debug", "all");
+
+        //uncomment to check for debug.
+        //System.setProperty("javax.net.debug", "all");
 
         //variables
         String code;
@@ -49,11 +51,17 @@ public class FileTransferServer {
             KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509"); // Type of Certificate
             kmf.init(ks, keyStorePwd.toCharArray());
 
-            SSLContext sc = SSLContext.getInstance("TLS");
-            sc.init(kmf.getKeyManagers(), null, null);
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509"); //truststore
+            tmf.init(ks);
+
+            SSLContext sc = SSLContext.getInstance("DTLS");
+            sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+
+            SSLEngine engine = sc.createSSLEngine();
+            engine.setUseClientMode(false);
 
             socket = new MyServerDatagramSocket(serverPort);
-            System.out.println("\n\n------File Management Server ready------");
+            System.out.println("\n------File Management Server ready------");
 
             while(true) { //loop forever
                 //send and receive data

@@ -1,11 +1,16 @@
 package com.dejong.client;
 
 import com.dejong.utils.ClientUtilities;
-import com.dejong.utils.TrackLoginUsers;
 
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLEngine;
+import javax.net.ssl.TrustManagerFactory;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.security.KeyStore;
 
 /**
  * This module contains presentation logic of a client
@@ -22,7 +27,9 @@ public class Client {
         //ssl communication
         System.setProperty("javax.net.ssl.keyStore", keystoreFile);
         System.setProperty("javax.net.ssl.keyStorePassword", keyStorePwd);
-        System.setProperty("javax.net.debug", "all");
+
+        //uncomment to check for debug
+        //System.setProperty("javax.net.debug", "all");
 
         //variables
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -35,12 +42,27 @@ public class Client {
         String file;
 
         try {
+            //ssl secure communication
+            KeyStore ks = KeyStore.getInstance("JKS");
+            ks.load(new FileInputStream(keystoreFile), keyStorePwd.toCharArray());
 
-            System.out.println("Welcome to File Management System!!");
+            KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509"); // Type of Certificate
+            kmf.init(ks, keyStorePwd.toCharArray());
+
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509"); //truststore
+            tmf.init(ks);
+
+            SSLContext sc = SSLContext.getInstance("DTLS");
+            sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+
+            SSLEngine engine = sc.createSSLEngine();
+            engine.setUseClientMode(true);
+
+            System.out.println("\n------Welcome to File Management System------");
 
             //program loop
             while(!done) {
-                System.out.println("\n\n---------- Enter option -----------\n" +
+                System.out.println("\n---------- Enter option -----------\n" +
                         "1. Login\n" + "2. Register\n" + "3. Upload\n" + "4. Download\n" +
                         "5. Logout\n" + "6. Quit/Disconnect");
                 String option = br.readLine();

@@ -2,8 +2,6 @@ package com.dejong.client;
 
 import java.io.IOException;
 import java.net.InetAddress;
-import java.net.SocketException;
-import java.net.UnknownHostException;
 
 /**
  * This class is a nodule which provides the application logic for an
@@ -21,7 +19,7 @@ public class ClientHelper {
     private InetAddress serverHost;
     private int serverPort;
 
-    public ClientHelper(String hostname, String portNum) throws SocketException, UnknownHostException {
+    public ClientHelper(String hostname, String portNum) throws IOException {
         this.serverHost = InetAddress.getByName(hostname);
         this.serverPort = Integer.parseInt(portNum);
 

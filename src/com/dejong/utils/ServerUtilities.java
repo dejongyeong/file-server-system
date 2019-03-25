@@ -18,7 +18,7 @@ public class ServerUtilities {
         users = SeedUsers.open();
         //check if user is logged in
         if(TrackLoginUsers.isLoggedIn(loginUsers, username)) {
-            return "303: " + username + " is logged in"; //server response
+            return "303: " + username + " is already logged in"; //server response
         } //end if
 
         for(Users u: users) {
