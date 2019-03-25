@@ -22,14 +22,15 @@ public class TrackLoginUsers {
 
     //logout users
     public static List<Users> logout(List<Users> users, String username) {
-        Users user = null;
+        List<Users> updates = users;
+        int index = 0;
         for(Users u: users) {
-            if(username.equals(u.getUsername())) {
-                user = new Users(u.getUsername(), u.getPassword());  //create log out user
-                break;
+            if(! username.equals(u.getUsername())) {
+                index ++;
             }
+            break;
         }
-        users.remove(user);  //remove users from list of logged in users
-        return users;
+        updates.remove(index);  //remove users from list of logged in users
+        return updates;
     }
 }

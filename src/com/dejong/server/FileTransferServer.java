@@ -57,7 +57,7 @@ public class FileTransferServer {
             SSLContext sc = SSLContext.getInstance("DTLS");
             sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
 
-            SSLEngine engine = sc.createSSLEngine();
+            SSLEngine engine = sc.createSSLEngine("localhost", serverPort);
             engine.setUseClientMode(false);
 
             socket = new MyServerDatagramSocket(serverPort);
@@ -84,6 +84,7 @@ public class FileTransferServer {
                         System.out.println("Server: Log In");
                         password = messages[2].trim();
                         response = ServerUtilities.login(username, password);
+                        System.out.println(response); //print server response out
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     case "400":
@@ -95,18 +96,21 @@ public class FileTransferServer {
                         System.out.println("Server: Register");
                         password = messages[2].trim();
                         response = ServerUtilities.register(username, password);
+                        System.out.println(response); //print server response out
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     case "600":
                         System.out.println("Server: Upload");
                         filename = messages[2].trim();
                         response = ServerUtilities.upload(username, filename);
+                        System.out.println(response); //print server response out
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     case "700":
                         System.out.println("Server: Download");
                         filename = messages[2].trim();
                         response = ServerUtilities.download(username, filename);
+                        System.out.println(response); //print server response out
                         socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     default:

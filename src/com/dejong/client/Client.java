@@ -55,7 +55,7 @@ public class Client {
             SSLContext sc = SSLContext.getInstance("DTLS");
             sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
 
-            SSLEngine engine = sc.createSSLEngine();
+            SSLEngine engine = sc.createSSLEngine("localhost", 7);
             engine.setUseClientMode(true);
 
             System.out.println("\n------Welcome to File Management System------");

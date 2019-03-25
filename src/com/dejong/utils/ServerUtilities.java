@@ -1,12 +1,11 @@
 package com.dejong.utils;
 
 import java.io.*;
+import java.util.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ServerUtilities {
 
@@ -56,6 +55,7 @@ public class ServerUtilities {
     //logout user
     public static String logout(String username) {
         if(! TrackLoginUsers.isLoggedIn(loginUsers, username)) {
+            System.out.println("User " + username + " not logged in");
             return "402: User " + username + " not logged in."; //server response to client
         }
         loginUsers = TrackLoginUsers.logout(loginUsers, username);
