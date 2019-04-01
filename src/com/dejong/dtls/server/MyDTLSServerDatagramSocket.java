@@ -48,8 +48,6 @@ public class MyDTLSServerDatagramSocket {
             //create ssl engine for server
             engine = DTLSEngine.createSSLEngine(false);
 
-            System.out.println(engine.getSession().isValid() + "---");
-
             //client socket address
             InetSocketAddress clientSocket = new InetSocketAddress(InetAddress.getByName(hostname), port);
 
@@ -61,7 +59,7 @@ public class MyDTLSServerDatagramSocket {
                 System.out.println("No data received on server side.");
             } else {
                 System.out.println("Message received");
-                //System.out.println(appData.getMessage());
+                System.out.println(appData.getMessage());
                 return appData;
             }
         } catch(Exception ex) {
