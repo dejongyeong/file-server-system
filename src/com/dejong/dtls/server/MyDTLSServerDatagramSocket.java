@@ -4,18 +4,27 @@ import com.dejong.dtls.DTLSEngine;
 import com.dejong.server.DatagramMessage;
 
 import javax.net.ssl.SSLEngine;
-import java.io.IOException;
 import java.net.*;
 import java.nio.ByteBuffer;
 
-public class MyDTLSServerDatagramSocket extends DatagramSocket {
+public class MyDTLSServerDatagramSocket {
 
-    private static final int MAX_LEN = 100;
     private SSLEngine engine;
+    private DatagramSocket mySocket;
+    private static int DEFAULT_PORT = 7;
 
     //constructor
-    public MyDTLSServerDatagramSocket(int port) throws SocketException {
-        super(port);
+    public MyDTLSServerDatagramSocket() {
+        try {
+            this.mySocket = new DatagramSocket(DEFAULT_PORT);
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    //return ssl engine
+    public SSLEngine getEngine() {
+        return this.engine;
     }
 
     //send message
@@ -25,7 +34,7 @@ public class MyDTLSServerDatagramSocket extends DatagramSocket {
             InetSocketAddress clientSocket = new InetSocketAddress(receiverHost, receiverPort);
 
             //engine wrap data
-            DTLSEngine.sendAppData(engine, this, ByteBuffer.wrap(message.getBytes()), clientSocket, "Server");
+            DTLSEngine.sendAppData(this.engine, mySocket, ByteBuffer.wrap(message.getBytes()), clientSocket, "Server");
             System.out.println("Data sent to Client");
 
         } catch(Exception ex) {
@@ -34,27 +43,24 @@ public class MyDTLSServerDatagramSocket extends DatagramSocket {
     }
 
     //receive message
-    public String receiveMessage() {
+    public DatagramMessage receiveMessage(String hostname, int port) {
         try {
-            //create sslengine for server
+            //create ssl engine for server
             engine = DTLSEngine.createSSLEngine(false);
 
-            //datagram receive packet
-            DatagramMessage receivedData = DTLSEngine.receiveAppData(engine, this, "Server");
-
             //client socket address
-            InetSocketAddress clientSocket = new InetSocketAddress(receivedData.getAddress(), receivedData.getPort());
+            InetSocketAddress clientSocket = new InetSocketAddress(InetAddress.getByName(hostname), port);
 
             //handshaking
-            DatagramMessage appData = DTLSEngine.handshake(engine, this, clientSocket, true);
+            DatagramMessage appData = DTLSEngine.handshake(this.engine, mySocket, clientSocket, true);
 
             //send message
             if(appData == null) {
-                System.out.println("No application data received on server side.");
+                System.out.println("No data received on server side.");
             } else {
                 System.out.println("Message received");
-                System.out.println(appData.getMessage());
-                return appData.getMessage();
+                //System.out.println(appData.getMessage());
+                return appData;
             }
         } catch(Exception ex) {
             ex.printStackTrace();

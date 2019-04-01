@@ -14,58 +14,66 @@ import java.nio.ByteBuffer;
  *
  */
 
-public class MyDTLSClientDatagramSocket extends DatagramSocket {
+public class MyDTLSClientDatagramSocket {
 
-    private static final int MAX_LEN = 100;
-    private static int port = 7;
-    private static String hostname = "localhost";
+    private static int DEFAULT_PORT = 8;
 
     private SSLEngine engine;
+    private DatagramSocket mySocket;
 
-    public MyDTLSClientDatagramSocket(int port) throws SocketException {
-        super(port);
+    public MyDTLSClientDatagramSocket(){
+        try {
+            this.mySocket = new DatagramSocket(DEFAULT_PORT);
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     //send message
-    public void sendMessage(String message, InetAddress receiverHost, int receiverPort) {
+    public byte[] sendMessage(String message, String receiverHost, int receiverPort) {
         try {
 
             engine = DTLSEngine.createSSLEngine(true);
 
             InetSocketAddress serverSocket = new InetSocketAddress(receiverHost, receiverPort);
-            DTLSEngine.handshake(engine, this, serverSocket, false);
+            DTLSEngine.handshake(this.engine, mySocket, serverSocket, false);
 
-            //convert string to bytebuffer
-            DTLSEngine.sendAppData(engine, this, ByteBuffer.wrap(message.getBytes()), serverSocket, "Client");
+            //convert string to byte buffer
+            DTLSEngine.sendAppData(this.engine, mySocket, ByteBuffer.wrap(message.getBytes()).duplicate(),
+                    serverSocket, "Client");
 
             //check if session is valid
             System.out.println(engine.getSession().isValid());
 
+            return null;
+
         } catch(Exception ex) {
             ex.printStackTrace();
         } //end catch
+
+        return new byte[0];
     } //end send message
 
     //receive message
-    public String receiveMessage() {
+    public DatagramMessage receiveMessage(String hostname, int port) {
         try {
-            //receive sslengine for client
+            //receive ssl engine for client
             engine = DTLSEngine.createSSLEngine(true);
 
-            //receive message
-            DatagramMessage receivedData = DTLSEngine.receiveAppData(engine, this, "Client");
-
-            InetSocketAddress serverSocket = new InetSocketAddress(receivedData.getAddress(), receivedData.getPort());
+            //server socket
+            //InetSocketAddress serverSocket = new InetSocketAddress(InetAddress.getByName(hostname), port);
 
             //handshaking
-            DTLSEngine.handshake(engine, this, serverSocket, false);
+            //DTLSEngine.handshake(this.engine, mySocket, serverSocket, false);
+
+            DatagramMessage receivedData = DTLSEngine.receiveAppData(this.engine, mySocket, "Client");
 
             if(receivedData == null) {
                 System.out.println("No data received on client side");
             } else {
                 System.out.println("Received message");
-                System.out.println(receivedData.getMessage());
-                return receivedData.getMessage();
+                //System.out.println(receivedData.getMessage());
+                return receivedData;
             }
         } catch(Exception ex) {
             ex.printStackTrace();

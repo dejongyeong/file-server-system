@@ -101,7 +101,7 @@ public class DTLSEngine {
      * The following is to set up the keystores.
      */
     //private static final String pathToStores = "C:\\";
-    private static final String keyStoreFile = "nanithefuck.jks";
+    private static final String keyStoreFile = "fms.jks";
     private static final String trustStoreFile = "public.jks";
     private static final String passwd = "ittralee";
 
