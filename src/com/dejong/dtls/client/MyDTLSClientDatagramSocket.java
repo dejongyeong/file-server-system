@@ -81,4 +81,37 @@ public class MyDTLSClientDatagramSocket {
 
         return null;
     } //end receive message
+
+    public DatagramMessage sendAndReceive(String message, String hostname, int port) {
+        try {
+            //ssl engine
+            engine = DTLSEngine.createSSLEngine(true);
+
+            //socket address
+            InetSocketAddress serverSocket = new InetSocketAddress(InetAddress.getByName(hostname), port);
+
+            //handshake
+            DTLSEngine.handshake(engine, mySocket, serverSocket, false);
+
+            //send data
+            DTLSEngine.sendAppData(engine, mySocket, ByteBuffer.wrap(message.getBytes()).duplicate(), serverSocket, "Client");
+
+            System.out.println("Data Sent");
+
+            //receive data
+            DatagramMessage receivedData = DTLSEngine.receiveAppData(engine, mySocket, "Client");
+
+            if(receivedData == null) {
+                System.out.println("No data received on client side");
+            } else {
+                System.out.println("Message received");
+                System.out.println(receivedData.getMessage());
+                return receivedData;
+            }
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        } //end catch
+
+        return null;
+    } //end send and receive
 }

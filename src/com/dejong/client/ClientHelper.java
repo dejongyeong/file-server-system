@@ -27,7 +27,7 @@ public class ClientHelper {
         this.mySocket = new MyClientDatagramSocket();
     }
 
-    public String send(String message) throws IOException {
+    public String sendAndReceive(String message) throws IOException {
         mySocket.sendMessage(serverHost, serverPort, message);
 
         // receive echo
