@@ -1,6 +1,6 @@
 package com.dejong.dtls;
 
-// Reference: http://cr.openjdk.java.net/~asmotrak/8159416/webrev.08/test/javax/net/ssl/DTLS/DTLSOverDatagram.java.html
+// reference: http://cr.openjdk.java.net/~asmotrak/8159416/webrev.08/test/javax/net/ssl/DTLS/DTLSOverDatagram.java.html
 
 /* Copyright (c) 2015, 2016, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
@@ -77,6 +77,7 @@ public class DTLSOverDatagram {
     /*
      * The following is to set up the keystores.
      */
+    //private static final String pathToStores = "C:\\";
     private static final String keyStoreFile = "fms.jks";
     private static final String trustStoreFile = "public.jks";
     private static final String passwd = "ittralee";
