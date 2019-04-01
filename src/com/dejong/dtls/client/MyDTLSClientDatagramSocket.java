@@ -114,4 +114,9 @@ public class MyDTLSClientDatagramSocket {
 
         return null;
     } //end send and receive
+
+    //disconnect
+    public void done() {
+        mySocket.close();
+    }
 }

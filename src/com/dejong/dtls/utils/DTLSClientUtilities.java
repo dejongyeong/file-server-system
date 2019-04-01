@@ -1,5 +1,6 @@
 package com.dejong.dtls.utils;
 
+import com.dejong.client.ClientHelper;
 import com.dejong.dtls.client.MyDTLSClientDatagramSocket;
 
 import java.io.IOException;
@@ -91,8 +92,9 @@ public class DTLSClientUtilities {
      * @throws IOException
      */
     public static void shutdown() throws IOException {
-        //ClientHelper helper = new ClientHelper(hostname, port);
+        //ClientHelper helper = new ClientHelper(hostname, String.valueOf(port));
         //helper.done();
+        client.done();
     }
 } //end class
 
