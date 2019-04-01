@@ -29,7 +29,7 @@ public class Client {
         System.setProperty("javax.net.ssl.keyStorePassword", keyStorePwd);
 
         //uncomment to check for debug
-        //System.setProperty("javax.net.debug", "all");
+        System.setProperty("javax.net.debug", "all");
 
         //variables
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -57,6 +57,8 @@ public class Client {
 
             SSLEngine engine = sc.createSSLEngine("localhost", 7);
             engine.setUseClientMode(true);
+
+            engine.beginHandshake();
 
             System.out.println("\n------Welcome to File Management System------");
 
