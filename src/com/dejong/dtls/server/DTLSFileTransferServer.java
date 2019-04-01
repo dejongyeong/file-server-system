@@ -1,6 +1,6 @@
-package com.dejong.server;
+package com.dejong.dtls.server;
 
-import com.dejong.dtls.server.MyDTLSServerDatagramSocket;
+import com.dejong.server.DatagramMessage;
 import com.dejong.utils.SeedUsers;
 import com.dejong.utils.ServerUtilities;
 import com.dejong.utils.Users;
@@ -21,12 +21,12 @@ import java.util.List;
  */
 
 @SuppressWarnings("Duplicates")
-public class FileTransferServer {
+public class DTLSFileTransferServer {
 
     //variables
-    static int serverPort = 7;
-    static MyServerDatagramSocket socket;
-
+    static String hostname = "localhost";
+    static int clientPort = 8;
+    //static MyServerDatagramSocket socket;
     //main method to run server.
     public static void main(String[] args) {
         //variables
@@ -37,16 +37,19 @@ public class FileTransferServer {
         String filename;
 
         try {
-            socket = new MyServerDatagramSocket(serverPort);
+            //socket = new MyServerDatagramSocket(serverPort);
             System.out.println("\n------File Management Server ready------");
 
             //display list of users in server
             displayListOfUsers();
 
             while(true) { //loop forever
+                //ssl server
+                MyDTLSServerDatagramSocket server = new MyDTLSServerDatagramSocket();
+
                 //send and receive data
                 //DatagramMessage request = socket.receiveMessageAndSender();
-                DatagramMessage request = socket.receiveMessageAndSender();
+                DatagramMessage request = server.receiveMessage(hostname, clientPort);
                 System.out.println("request received");
                 String message = request.getMessage();
                 System.out.println("message received: " + message);
@@ -66,38 +69,44 @@ public class FileTransferServer {
                         password = messages[2].trim();
                         response = ServerUtilities.login(username, password);
                         System.out.println(response); //print server response out
-                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        server.sendMessage(server.getEngine(), request.getAddress(), request.getPort(), response);
+                        //socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     case "400":
                         System.out.println("Server: Log Out");
                         response = ServerUtilities.logout(username);
-                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        server.sendMessage(server.getEngine(), request.getAddress(), request.getPort(), response);
+                        //socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     case "500":
                         System.out.println("Server: Register");
                         password = messages[2].trim();
                         response = ServerUtilities.register(username, password);
                         System.out.println(response); //print server response out
-                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        server.sendMessage(server.getEngine(), request.getAddress(), request.getPort(), response);
+                        //socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     case "600":
                         System.out.println("Server: Upload");
                         filename = messages[2].trim();
                         response = ServerUtilities.upload(username, filename);
                         System.out.println(response); //print server response out
-                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        //socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        server.sendMessage(server.getEngine(), request.getAddress(), request.getPort(), response);
                         break;
                     case "700":
                         System.out.println("Server: Download");
                         filename = messages[2].trim();
                         response = ServerUtilities.download(username, filename);
                         System.out.println(response); //print server response out
-                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        server.sendMessage(server.getEngine(), request.getAddress(), request.getPort(), response);
+                        //socket.sendMessage(request.getAddress(), request.getPort(), response);
                         break;
                     default:
                         System.out.println("System error occurred!");
                         response = "900: System error. Please try again!";
-                        socket.sendMessage(request.getAddress(), request.getPort(), response);
+                        server.sendMessage(server.getEngine(), request.getAddress(), request.getPort(), response);
+                        //socket.sendMessage(request.getAddress(), request.getPort(), response);
                 } //end switch
             } //end while
         } catch (Exception ex) {

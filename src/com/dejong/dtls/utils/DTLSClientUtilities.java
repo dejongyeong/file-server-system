@@ -1,6 +1,6 @@
-package com.dejong.utils;
+package com.dejong.dtls.utils;
 
-import com.dejong.client.ClientHelper;
+import com.dejong.dtls.client.MyDTLSClientDatagramSocket;
 
 import java.io.IOException;
 
@@ -11,10 +11,11 @@ import java.io.IOException;
  * @author De Jong on 20 March 2019
  */
 
-public class ClientUtilities {
+public class DTLSClientUtilities {
 
+    private static MyDTLSClientDatagramSocket client = new MyDTLSClientDatagramSocket();
     private static String hostname = "localhost";
-    private static String port = "7";
+    private static int port = 7;
 
     /**
      * Client login utility class.
@@ -24,9 +25,9 @@ public class ClientUtilities {
      * @throws IOException
      */
     public static String login(String username, String password) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+        //ClientHelper helper = new ClientHelper(hostname, port);
         String message = "300" + " " + username + " " + password; //client message to server
-        String echo = helper.sendAndReceive(message);
+        String echo = client.sendAndReceive(message, hostname, port).getMessage();
         return echo;
     }
 
@@ -37,9 +38,9 @@ public class ClientUtilities {
      * @throws IOException
      */
     public static String logout(String username) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+        //ClientHelper helper = new ClientHelper(hostname, port);
         String message = "400" + " " + username; //client message to server
-        String echo =  helper.sendAndReceive(message);
+        String echo = client.sendAndReceive(message, hostname, port).getMessage();
         return echo;
     }
 
@@ -51,9 +52,9 @@ public class ClientUtilities {
      * @throws IOException
      */
     public static String register(String username, String password) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+        //ClientHelper helper = new ClientHelper(hostname, port);
         String message = "500" + " " + username + " " + password; //client message to server
-        String echo =  helper.sendAndReceive(message);
+        String echo = client.sendAndReceive(message, hostname, port).getMessage();
         return echo;
     }
 
@@ -65,9 +66,9 @@ public class ClientUtilities {
      * @throws IOException
      */
     public static String upload(String username, String filename) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+        //ClientHelper helper = new ClientHelper(hostname, port);
         String message = "600" + " " + username + " " + filename;
-        String echo =  helper.sendAndReceive(message);
+        String echo = client.sendAndReceive(message, hostname, port).getMessage();
         return echo;
     }
 
@@ -79,9 +80,9 @@ public class ClientUtilities {
      * @throws IOException
      */
     public static String download(String username, String filename) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+        //ClientHelper helper = new ClientHelper(hostname, port);
         String message = "700" + " " + username + " " + filename;
-        String echo =  helper.sendAndReceive(message);
+        String echo = client.sendAndReceive(message, hostname, port).getMessage();
         return echo;
     }
 
@@ -90,7 +91,8 @@ public class ClientUtilities {
      * @throws IOException
      */
     public static void shutdown() throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
-        helper.done();
+        //ClientHelper helper = new ClientHelper(hostname, port);
+        //helper.done();
     }
 } //end class
+

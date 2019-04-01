@@ -34,7 +34,7 @@ public class MyDTLSServerDatagramSocket {
             InetSocketAddress clientSocket = new InetSocketAddress(receiverHost, receiverPort);
 
             //engine wrap data
-            DTLSEngine.sendAppData(this.engine, mySocket, ByteBuffer.wrap(message.getBytes()), clientSocket, "Server");
+            DTLSEngine.sendAppData(engine, mySocket, ByteBuffer.wrap(message.getBytes()), clientSocket, "Server");
             System.out.println("Data sent to Client");
 
         } catch(Exception ex) {
@@ -48,11 +48,13 @@ public class MyDTLSServerDatagramSocket {
             //create ssl engine for server
             engine = DTLSEngine.createSSLEngine(false);
 
+            System.out.println(engine.getSession().isValid() + "---");
+
             //client socket address
             InetSocketAddress clientSocket = new InetSocketAddress(InetAddress.getByName(hostname), port);
 
             //handshaking
-            DatagramMessage appData = DTLSEngine.handshake(this.engine, mySocket, clientSocket, true);
+            DatagramMessage appData = DTLSEngine.handshake(engine, mySocket, clientSocket, true);
 
             //send message
             if(appData == null) {

@@ -36,10 +36,10 @@ public class MyDTLSClientDatagramSocket {
             engine = DTLSEngine.createSSLEngine(true);
 
             InetSocketAddress serverSocket = new InetSocketAddress(receiverHost, receiverPort);
-            DTLSEngine.handshake(this.engine, mySocket, serverSocket, false);
+            DTLSEngine.handshake(engine, mySocket, serverSocket, false);
 
             //convert string to byte buffer
-            DTLSEngine.sendAppData(this.engine, mySocket, ByteBuffer.wrap(message.getBytes()).duplicate(),
+            DTLSEngine.sendAppData(engine, mySocket, ByteBuffer.wrap(message.getBytes()).duplicate(),
                     serverSocket, "Client");
 
             //check if session is valid
@@ -66,7 +66,7 @@ public class MyDTLSClientDatagramSocket {
             //handshaking
             //DTLSEngine.handshake(this.engine, mySocket, serverSocket, false);
 
-            DatagramMessage receivedData = DTLSEngine.receiveAppData(this.engine, mySocket, "Client");
+            DatagramMessage receivedData = DTLSEngine.receiveAppData(engine, mySocket, "Client");
 
             if(receivedData == null) {
                 System.out.println("No data received on client side");
