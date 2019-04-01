@@ -1,6 +1,6 @@
 package com.dejong.dtls.client;
 
-import com.dejong.dtls.DTLSEngine;
+import com.dejong.dtls.utils.DTLSEngine;
 import com.dejong.server.DatagramMessage;
 
 import javax.net.ssl.SSLEngine;

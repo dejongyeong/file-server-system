@@ -1,4 +1,4 @@
-package com.dejong.dtls;
+package com.dejong.dtls.utils;
 
 // reference: http://cr.openjdk.java.net/~amjiang/8145849/webrev.02/test/javax/net/ssl/ALPN/SSLEngineAlpnTest.java.html
 // changes made: renamed file
