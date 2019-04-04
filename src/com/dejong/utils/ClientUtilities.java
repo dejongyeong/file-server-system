@@ -91,6 +91,6 @@ public class ClientUtilities {
      */
     public static void shutdown() throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
-        helper.done();
+        helper.disconnect();
     }
 } //end class

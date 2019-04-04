@@ -3,8 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="d74565fe-516b-4a41-b90c-355a415ebd85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/client/MyDTLSClientDatagramSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/dtls/client/MyDTLSClientDatagramSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/server/DTLSFileTransferServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/dtls/server/DTLSFileTransferServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/client/DTLSClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/client/MyDTLSClientDatagramSocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/server/DTLSFileTransferServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/server/MyDTLSServerDatagramSocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/utils/DTLSClientUtilities.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,7 +51,7 @@
           <entry key="dejong" value="2" />
           <entry key="gitignore" value="2" />
           <entry key="iml" value="1" />
-          <entry key="java" value="541" />
+          <entry key="java" value="580" />
           <entry key="md" value="2" />
           <entry key="png" value="1" />
           <entry key="puml" value="2" />
@@ -55,7 +65,7 @@
           <entry key="Git file" value="2" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="541" />
+          <entry key="JAVA" value="580" />
           <entry key="Markdown" value="2" />
           <entry key="PlantUML file" value="2" />
           <entry key="UML" value="15" />
@@ -64,13 +74,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="92" />
-          <entry key="java" value="36278" />
+          <entry key="java" value="38705" />
           <entry key="puml" value="333" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="36278" />
+          <entry key="JAVA" value="38705" />
           <entry key="PLAIN_TEXT" value="92" />
           <entry key="PlantUML file" value="333" />
         </counts>
@@ -79,23 +89,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/client/MyDTLSClientDatagramSocket.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="106" column="16" lean-forward="true" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+            <state relative-caret-position="231">
+              <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -126,8 +127,6 @@
         <option value="$PROJECT_DIR$/src/com/dejong/server/DatagramMessage.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/EchoClient1.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/EchoClientHelper1.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/EchoClient.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/file-server-system.puml" />
         <option value="$PROJECT_DIR$/src/file-server-system.puml" />
@@ -143,20 +142,23 @@
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/DTLSOverDatagram.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/DTLSClient.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/DTLSServer.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestClient.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestServer.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/Client.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/DTLSEngine.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/client/DTLSClient.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/dtls/server/MyDTLSServerDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/utils/DTLSEngine.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/utils/DTLSOverDatagram.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/server/DTLSFileTransferServer.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/dtls/utils/DTLSClientUtilities.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/dtls/server/MyDTLSServerDatagramSocket.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/utils/SSLClientServerDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/client/MyDTLSClientDatagramSocket.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/dtls/utils/DTLSClientUtilities.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestServer.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestClient.java" />
       </list>
     </option>
   </component>
@@ -166,8 +168,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1050" />
   </component>
@@ -216,6 +218,28 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dejong" type="462c0819:PsiDirectoryNode" />
               <item name="dtls" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-server-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="file-server-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dejong" type="462c0819:PsiDirectoryNode" />
+              <item name="dtls" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-server-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="file-server-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dejong" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file-server-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="file-server-system" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dejong" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -230,7 +254,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554400962366" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554420082554" />
     <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Desktop/test/DistributedComputing-SSL" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -255,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DTLSClient">
+  <component name="RunManager" selected="Application.DTLSTestServer">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dejong.client.Client" />
       <module name="file-server-system" />
@@ -282,12 +306,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DTLSFileTransferServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dejong.dtls.server.DTLSFileTransferServer" />
+    <configuration name="DTLSTestClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dejong.dtls.test.DTLSTestClient" />
       <module name="file-server-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dejong.dtls.server.*" />
+          <option name="PATTERN" value="com.dejong.dtls.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -295,12 +319,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DTLSOverDatagram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dejong.dtls.utils.DTLSOverDatagram" />
+    <configuration name="DTLSTestServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dejong.dtls.test.DTLSTestServer" />
       <module name="file-server-system" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dejong.dtls.utils.*" />
+          <option name="PATTERN" value="com.dejong.dtls.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -324,17 +348,17 @@
     <list>
       <item itemvalue="Application.FileTransferServer" />
       <item itemvalue="Application.Client" />
-      <item itemvalue="Application.DTLSOverDatagram" />
-      <item itemvalue="Application.DTLSFileTransferServer" />
       <item itemvalue="Application.DTLSClient" />
+      <item itemvalue="Application.DTLSTestServer" />
+      <item itemvalue="Application.DTLSTestClient" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DTLSClient" />
-        <item itemvalue="Application.DTLSFileTransferServer" />
-        <item itemvalue="Application.DTLSOverDatagram" />
+        <item itemvalue="Application.DTLSTestClient" />
+        <item itemvalue="Application.DTLSTestServer" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.FileTransferServer" />
+        <item itemvalue="Application.DTLSClient" />
       </list>
     </recent_temporary>
   </component>
@@ -367,7 +391,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135967000" />
+    <option name="totallyTimeSpent" value="140427000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,10 +403,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-6" y="0" width="781" height="840" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22080536" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35506243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -390,8 +414,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32456142" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3598266" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3236994" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3640351" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39884394" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -684,33 +708,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/DTLSServer.java" />
     <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/DTLSClient.java" />
     <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -721,33 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="31" selection-end-line="140" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/net/DatagramSocketImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-756">
@@ -755,30 +731,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/utils/DTLSOverDatagram.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="181" column="39" selection-start-line="181" selection-start-column="39" selection-end-line="181" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/server/MyDTLSServerDatagramSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -802,31 +758,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/utils/DTLSClientUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#login#0;class#DTLSClientUtilities#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/server/DTLSFileTransferServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="307">
+          <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/client/DTLSClient.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-381">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        <state relative-caret-position="234">
+          <caret line="34" column="35" lean-forward="true" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/SSLClientServerDatagramSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="699">
+          <caret line="50" column="49" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/server/MyDTLSServerDatagramSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="822">
+          <caret line="65" column="31" lean-forward="true" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-181">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -835,18 +820,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/client/MyDTLSClientDatagramSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="106" column="16" lean-forward="true" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+        <state relative-caret-position="-348">
+          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/utils/DTLSClientUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#login#0;class#DTLSClientUtilities#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/client/DTLSClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="93" column="15" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1416#1417#0" expanded="true" />
+            <element signature="e#1441#1442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        <state relative-caret-position="202">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding>
+            <element signature="e#2263#2264#0" expanded="true" />
+            <element signature="e#2293#2294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

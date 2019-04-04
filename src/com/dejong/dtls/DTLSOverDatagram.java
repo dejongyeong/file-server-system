@@ -1,4 +1,4 @@
-package com.dejong.dtls.utils;
+package com.dejong.dtls;
 
 // reference: http://cr.openjdk.java.net/~asmotrak/8159416/webrev.08/test/javax/net/ssl/DTLS/DTLSOverDatagram.java.html
 

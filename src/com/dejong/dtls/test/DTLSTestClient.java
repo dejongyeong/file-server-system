@@ -1,6 +1,7 @@
 package com.dejong.dtls.test;
 
-import com.dejong.dtls.client.MyDTLSClientDatagramSocket;
+import com.dejong.client.MyClientDatagramSocket;
+import com.dejong.dtls.DTLSEngine;
 
 public class DTLSTestClient {
 
@@ -8,8 +9,12 @@ public class DTLSTestClient {
 
         try {
 
-            MyDTLSClientDatagramSocket client = new MyDTLSClientDatagramSocket();
-            client.sendMessage("I'm client", "localhost", 7);
+            MyClientDatagramSocket client = new MyClientDatagramSocket();
+            client.setSSLEngine(DTLSEngine.createSSLEngine(true));
+
+            //testing purpose
+            //send message
+            client.sendMessage("localhost", 7, "I'm Client");
 
         } catch(Exception ex) {
             ex.printStackTrace();

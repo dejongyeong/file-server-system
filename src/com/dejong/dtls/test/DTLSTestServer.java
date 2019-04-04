@@ -1,6 +1,8 @@
 package com.dejong.dtls.test;
 
-import com.dejong.dtls.server.MyDTLSServerDatagramSocket;
+import com.dejong.server.MyServerDatagramSocket;
+
+import java.net.InetAddress;
 
 public class DTLSTestServer {
 
@@ -8,10 +10,10 @@ public class DTLSTestServer {
 
         try {
 
-            MyDTLSServerDatagramSocket server = new MyDTLSServerDatagramSocket();
+            MyServerDatagramSocket server = new MyServerDatagramSocket();
 
             while(true) {
-                server.receiveMessage("localhost", 8);
+                server.receiveMessage(InetAddress.getByName("localhost"), 8);
             }
 
         } catch(Exception ex) {

@@ -5,6 +5,7 @@ import com.dejong.utils.SeedUsers;
 import com.dejong.utils.ServerUtilities;
 import com.dejong.utils.Users;
 
+import java.net.InetAddress;
 import java.util.List;
 
 /**
@@ -24,8 +25,8 @@ import java.util.List;
 public class FileTransferServer {
 
     //variables
-    static int serverPort = 7;
-    static MyServerDatagramSocket socket;
+    static int clientPort = 8;
+    static String hostname = "localhost";
 
     //main method to run server.
     public static void main(String[] args) {
@@ -37,7 +38,9 @@ public class FileTransferServer {
         String filename;
 
         try {
-            socket = new MyServerDatagramSocket(serverPort);
+            //initialize socket
+            MyServerDatagramSocket socket = new MyServerDatagramSocket();
+
             System.out.println("\n------File Management Server ready------");
 
             //display list of users in server
@@ -45,8 +48,7 @@ public class FileTransferServer {
 
             while(true) { //loop forever
                 //send and receive data
-                //DatagramMessage request = socket.receiveMessageAndSender();
-                DatagramMessage request = socket.receiveMessageAndSender();
+                DatagramMessage request = socket.receiveMessage(InetAddress.getByName(hostname), clientPort);
                 System.out.println("request received");
                 String message = request.getMessage();
                 System.out.println("message received: " + message);
