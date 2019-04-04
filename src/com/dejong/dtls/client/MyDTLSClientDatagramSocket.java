@@ -43,7 +43,7 @@ public class MyDTLSClientDatagramSocket {
                     serverSocket, "Client");
 
             //check if session is valid
-            System.out.println(engine.getSession().isValid());
+            //System.out.println(engine.getSession().isValid());
 
             return null;
 
@@ -96,7 +96,7 @@ public class MyDTLSClientDatagramSocket {
             //send data
             DTLSEngine.sendAppData(engine, mySocket, ByteBuffer.wrap(message.getBytes()).duplicate(), serverSocket, "Client");
 
-            System.out.println("Data Sent");
+            //System.out.println("Data Sent");
 
             //receive data
             DatagramMessage receivedData = DTLSEngine.receiveAppData(engine, mySocket, "Client");
@@ -105,7 +105,7 @@ public class MyDTLSClientDatagramSocket {
                 System.out.println("No data received on client side");
             } else {
                 System.out.println("Message received");
-                System.out.println(receivedData.getMessage());
+                //System.out.println(receivedData.getMessage());
                 return receivedData;
             }
         } catch(Exception ex) {

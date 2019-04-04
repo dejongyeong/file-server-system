@@ -37,15 +37,15 @@ public class DTLSFileTransferServer {
         String filename;
 
         try {
+            //ssl server
+            MyDTLSServerDatagramSocket server = new MyDTLSServerDatagramSocket();
+
             System.out.println("\n------File Management Server ready------");
 
             //display list of users in server
             displayListOfUsers();
 
             while(true) { //loop forever
-                //ssl server
-                MyDTLSServerDatagramSocket server = new MyDTLSServerDatagramSocket();
-
                 //send and receive data
                 DatagramMessage request = server.receiveMessage(hostname, clientPort);
                 System.out.println("request received");
