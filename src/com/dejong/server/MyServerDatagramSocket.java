@@ -30,7 +30,7 @@ public class MyServerDatagramSocket extends SSLClientServerDatagramSocket {
     }
 
     //send message
-    protected void sendMessage(InetAddress receiverHost, int receiverPort, String message) {
+    void sendMessage(InetAddress receiverHost, int receiverPort, String message) {
         try {
             //client socket address
             InetSocketAddress client = new InetSocketAddress(receiverHost, receiverPort);
@@ -60,7 +60,7 @@ public class MyServerDatagramSocket extends SSLClientServerDatagramSocket {
             if(appData == null) {
                 System.out.println("No data received on server side.");
             } else {
-                System.out.println("Message received");
+                //System.out.println("Message received");
                 return appData;
             }
         } catch(Exception ex) {

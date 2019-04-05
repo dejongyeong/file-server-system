@@ -1,5 +1,12 @@
 package com.dejong.utils;
 
+/**
+ * This is a class that resolves the duplicates issue when implementing the file server system before implementing
+ * the secure communication feature.
+ *
+ * The class is not used after secure communication feature is implemented.
+ */
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

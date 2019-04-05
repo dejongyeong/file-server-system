@@ -15,8 +15,11 @@ import java.util.List;
  *
  *
  * Response Code:
- * Login: 301 successful login; 302 unsuccessful login; 303 user already logged in; 900 system error.
- *
+ * 300 Login: 301 successful login; 302 unsuccessful login; 303 user already logged in; 900 system error.
+ * 400 Logout: 401 successful logout; 402 unsuccessful logout; 900 system error.
+ * 500 Register: 501 succesful register; 502 unsuccessful register.
+ * 600 Upload: 601 successful upload; 602 unsuccessful upload.
+ * 700 Download: 701 successful download; 702 unsuccessful download.
  *
  */
 

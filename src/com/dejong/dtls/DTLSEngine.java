@@ -124,8 +124,8 @@ public class DTLSEngine {
     private static Exception clientException = null;
     private static Exception serverException = null;
 
-    // get DTSL context
-    public static SSLContext getDTLSContext() throws Exception {
+    //retrieve dtls context
+    private static SSLContext getDTLSContext() throws Exception {
         KeyStore ks = KeyStore.getInstance("JKS");
         KeyStore ts = KeyStore.getInstance("JKS");
 
@@ -145,13 +145,16 @@ public class DTLSEngine {
         TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509");
         tmf.init(ts);
 
+        //retrieve instance of SSLContext with correspond to DTLS
         SSLContext sslCtx = SSLContext.getInstance("DTLS");
 
+        //additional security information
         sslCtx.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
 
         return sslCtx;
     }
 
+    //create ssl engine
     public static SSLEngine createSSLEngine(boolean isClient) throws Exception {
         SSLContext context = getDTLSContext();
         SSLEngine engine = context.createSSLEngine();
@@ -190,7 +193,7 @@ public class DTLSEngine {
             if (hs == SSLEngineResult.HandshakeStatus.NEED_UNWRAP ||
                     hs == SSLEngineResult.HandshakeStatus.NEED_UNWRAP_AGAIN) {
 
-                log(side, "Need DTLS records, handshake status is " + hs);
+//                log(side, "Need DTLS records, handshake status is " + hs);
 
                 ByteBuffer iNet;
                 ByteBuffer iApp;
@@ -198,32 +201,32 @@ public class DTLSEngine {
                     byte[] buf = new byte[BUFFER_SIZE];
                     DatagramPacket packet = new DatagramPacket(buf, buf.length);
                     try {
-                        log(side, "handshake(): wait for a packet");
+//                        log(side, "handshake(): wait for a packet");
                         socket.receive(packet);
-                        log(side, "handshake(): received a packet, length = "
-                                + packet.getLength());
+//                        log(side, "handshake(): received a packet, length = "
+//                                + packet.getLength());
                     } catch (SocketTimeoutException ste) {
-                        log(side, "Warning: " + ste);
+//                        log(side, "Warning: " + ste);
 
                         packets.clear();
                         boolean finished = onReceiveTimeout(
                                 engine, peerAddr, side, packets);
 
-                        log(side, "handshake(): receive timeout: re-send "
-                                + packets.size() + " packets");
+//                        log(side, "handshake(): receive timeout: re-send "
+//                                + packets.size() + " packets");
                         for (DatagramPacket p : packets) {
                             socket.send(p);
                         }
 
                         if (finished) {
-                            log(side, "Handshake status is FINISHED "
-                                    + "after calling onReceiveTimeout(), "
-                                    + "finish the loop");
+//                            log(side, "Handshake status is FINISHED "
+//                                    + "after calling onReceiveTimeout(), "
+//                                    + "finish the loop");
                             endLoops = true;
                         }
 
-                        log(side, "New handshake status is "
-                                + engine.getHandshakeStatus());
+//                        log(side, "New handshake status is "
+//                                + engine.getHandshakeStatus());
 
                         continue;
                     }
@@ -241,13 +244,13 @@ public class DTLSEngine {
                 if (rs == SSLEngineResult.Status.OK) {
                     // OK
                 } else if (rs == SSLEngineResult.Status.BUFFER_OVERFLOW) {
-                    log(side, "BUFFER_OVERFLOW, handshake status is " + hs);
+//                    log(side, "BUFFER_OVERFLOW, handshake status is " + hs);
 
                     // the client maximum fragment size config does not work?
                     throw new Exception("Buffer overflow: " +
                             "incorrect client maximum fragment size");
                 } else if (rs == SSLEngineResult.Status.BUFFER_UNDERFLOW) {
-                    log(side, "BUFFER_UNDERFLOW, handshake status is " + hs);
+//                    log(side, "BUFFER_UNDERFLOW, handshake status is " + hs);
 
                     // bad packet, or the client maximum fragment size
                     // config does not work?
@@ -263,7 +266,7 @@ public class DTLSEngine {
                 }
 
                 if (hs == SSLEngineResult.HandshakeStatus.FINISHED) {
-                    log(side, "Handshake status is FINISHED, finish the loop");
+//                    log(side, "Handshake status is FINISHED, finish the loop");
                     endLoops = true;
                 }
             } else if (hs == SSLEngineResult.HandshakeStatus.NEED_WRAP) {
@@ -271,23 +274,23 @@ public class DTLSEngine {
                 boolean finished = produceHandshakePackets(
                         engine, peerAddr, side, packets);
 
-                log(side, "handshake(): need wrap: send " + packets.size()
-                        + " packets");
+//                log(side, "handshake(): need wrap: send " + packets.size()
+//                        + " packets");
                 for (DatagramPacket p : packets) {
                     socket.send(p);
                 }
 
                 if (finished) {
-                    log(side, "Handshake status is FINISHED "
-                            + "after producing handshake packets, "
-                            + "finish the loop");
+//                    log(side, "Handshake status is FINISHED "
+//                            + "after producing handshake packets, "
+//                            + "finish the loop");
                     endLoops = true;
                 }
             } else if (hs == SSLEngineResult.HandshakeStatus.NEED_TASK) {
                 runDelegatedTasks(engine);
             } else if (hs == SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING) {
-                log(side, "Handshake status is NOT_HANDSHAKING,"
-                        + " finish the loop");
+//                log(side, "Handshake status is NOT_HANDSHAKING,"
+//                        + " finish the loop");
                 endLoops = true;
             } else if (hs == SSLEngineResult.HandshakeStatus.FINISHED) {
                 throw new Exception(
@@ -313,13 +316,13 @@ public class DTLSEngine {
                 // re-send final handshake packets
 
                 SSLEngineResult.HandshakeStatus hs = engine.getHandshakeStatus();
-                log(side, "receiveAppData(): handshake status is " + hs);
+//                log(side, "receiveAppData(): handshake status is " + hs);
 
                 packets.clear();
                 produceHandshakePackets(engine, peerAddr, side, packets);
 
-                log(side, "receiveAppData(): re-send " + packets.size()
-                        + " final packets");
+//                log(side, "receiveAppData(): re-send " + packets.size()
+//                        + " final packets");
                 for (DatagramPacket p : packets) {
                     socket.send(p);
                 }
@@ -329,7 +332,7 @@ public class DTLSEngine {
         }
 
         SSLEngineResult.HandshakeStatus hs = engine.getHandshakeStatus();
-        log(side, "Handshake finished, status is " + hs);
+//        log(side, "Handshake finished, status is " + hs);
 
         if (engine.getHandshakeSession() != null) {
             throw new Exception(
@@ -340,8 +343,8 @@ public class DTLSEngine {
         if (session == null) {
             throw new Exception("Handshake finished, but session is null");
         }
-        log(side, "Negotiated protocol is " + session.getProtocol());
-        log(side, "Negotiated cipher suite is " + session.getCipherSuite());
+//        log(side, "Negotiated protocol is " + session.getProtocol());
+//        log(side, "Negotiated cipher suite is " + session.getCipherSuite());
 
         // handshake status should be NOT_HANDSHAKING
         //
@@ -355,7 +358,7 @@ public class DTLSEngine {
     }
 
     // produce handshake packets
-    static boolean produceHandshakePackets(SSLEngine engine, SocketAddress socketAddr,
+    private static boolean produceHandshakePackets(SSLEngine engine, SocketAddress socketAddr,
                                            String side, List<DatagramPacket> packets) throws Exception {
 
         boolean endLoops = false;
@@ -380,8 +383,8 @@ public class DTLSEngine {
                 throw new Exception("Buffer overflow: " +
                         "incorrect server maximum fragment size");
             } else if (rs == SSLEngineResult.Status.BUFFER_UNDERFLOW) {
-                log(side, "produceHandshakePackets(): BUFFER_UNDERFLOW");
-                log(side, "produceHandshakePackets(): handshake status: " + hs);
+//                log(side, "produceHandshakePackets(): BUFFER_UNDERFLOW");
+//                log(side, "produceHandshakePackets(): handshake status: " + hs);
                 // bad packet, or the client maximum fragment size
                 // config does not work?
                 if (hs != SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING) {
@@ -405,8 +408,8 @@ public class DTLSEngine {
             }
 
             if (hs == SSLEngineResult.HandshakeStatus.FINISHED) {
-                log(side, "produceHandshakePackets(): "
-                        + "Handshake status is FINISHED, finish the loop");
+//                log(side, "produceHandshakePackets(): "
+//                        + "Handshake status is FINISHED, finish the loop");
                 return true;
             }
 
@@ -446,18 +449,18 @@ public class DTLSEngine {
         List<DatagramPacket> packets =
                 produceApplicationPackets(engine, appData, peerAddr);
         appData.flip();
-        log(side, "sendAppData(): send " + packets.size() + " packets");
+//        log(side, "sendAppData(): send " + packets.size() + " packets");
         for (DatagramPacket p : packets) {
             socket.send(p);
         }
     }
 
-    static DatagramPacket createHandshakePacket(byte[] ba, SocketAddress socketAddr) {
+    private static DatagramPacket createHandshakePacket(byte[] ba, SocketAddress socketAddr) {
         return new DatagramPacket(ba, ba.length, socketAddr);
     }
 
     // produce application packets
-    static List<DatagramPacket> produceApplicationPackets(
+    private static List<DatagramPacket> produceApplicationPackets(
             SSLEngine engine, ByteBuffer source,
             SocketAddress socketAddr) throws Exception {
 
@@ -495,7 +498,7 @@ public class DTLSEngine {
     }
 
     // retransmission if timeout
-    static boolean onReceiveTimeout(SSLEngine engine, SocketAddress socketAddr,
+    private static boolean onReceiveTimeout(SSLEngine engine, SocketAddress socketAddr,
                                     String side, List<DatagramPacket> packets) throws Exception {
 
         SSLEngineResult.HandshakeStatus hs = engine.getHandshakeStatus();
@@ -514,7 +517,7 @@ public class DTLSEngine {
 
     // receive application data
     // the method returns not-null if data received
-    public static DatagramMessage receiveAppData(SSLEngine engine, DatagramSocket socket,
+    private static DatagramMessage receiveAppData(SSLEngine engine, DatagramSocket socket,
                                                  String side, Callable onHandshakeMessage)
             throws Exception {
 
@@ -527,10 +530,10 @@ public class DTLSEngine {
 
             byte[] buf = new byte[BUFFER_SIZE];
             DatagramPacket packet = new DatagramPacket(buf, buf.length);
-            log(side, "receiveAppData(): wait for a packet");
+//            log(side, "receiveAppData(): wait for a packet");
             try {
                 socket.receive(packet);
-                log(side, "receiveAppData(): received a packet");
+//                log(side, "receiveAppData(): received a packet");
             } catch (SocketTimeoutException e) {
                 log(side, "Warning: " + e);
                 continue;
@@ -541,11 +544,11 @@ public class DTLSEngine {
             ByteBuffer netBuffer = ByteBuffer.wrap(buf, 0, packet.getLength());
             ByteBuffer recBuffer = ByteBuffer.allocate(BUFFER_SIZE);
             SSLEngineResult rs = engine.unwrap(netBuffer, recBuffer);
-            log(side, "receiveAppData(): engine status is " + rs);
+//            log(side, "receiveAppData(): engine status is " + rs);
             recBuffer.flip();
             if (recBuffer.remaining() != 0) {
                 //return recBuffer;
-                System.out.println(new String(recBuffer.array()));
+                //System.out.println(new String(recBuffer.array()));
                 DatagramMessage returnVal = new DatagramMessage( );
                 returnVal.putVal(new String(recBuffer.array()),
                         packet.getAddress( ),

@@ -35,14 +35,15 @@ public class MyClientDatagramSocket extends SSLClientServerDatagramSocket {
     }
 
     //client send message
-    public void sendMessage(InetAddress receiverHost, int receiverPort, String message) {
+    void sendMessage(InetAddress receiverHost, int receiverPort, String message) {
         try {
             //server socket address
             InetSocketAddress server = new InetSocketAddress(receiverHost, receiverPort);
             DTLSEngine.handshake(engine, socket, server, false); //handshake
 
             //wrap and send data
-            DTLSEngine.sendAppData(engine, socket, ByteBuffer.wrap(message.getBytes()).duplicate(), server, "Client");
+            DTLSEngine.sendAppData(engine, socket, ByteBuffer.wrap(message.getBytes()).duplicate(),
+                    server, "Client");
 
         } catch(Exception ex) {
             ex.printStackTrace();
@@ -59,14 +60,13 @@ public class MyClientDatagramSocket extends SSLClientServerDatagramSocket {
             if(receivedData == null) {
                 System.out.println("No data received on client side");
             } else {
-                System.out.println("Received message");
+                //System.out.println("Received message");
                 //System.out.println(receivedData.getMessage());
                 return receivedData;
             }
         } catch(Exception ex) {
             ex.printStackTrace();
         } //end catch
-
         return null;
     }
 
