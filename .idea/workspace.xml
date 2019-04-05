@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d74565fe-516b-4a41-b90c-355a415ebd85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/dtls/DTLSEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/dtls/DTLSEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uml/clientsideuml.png" beforeDir="false" afterPath="$PROJECT_DIR$/uml/clientsideuml.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uml/overalluml.png" beforeDir="false" afterPath="$PROJECT_DIR$/uml/overalluml.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uml/serversideuml.png" beforeDir="false" afterPath="$PROJECT_DIR$/uml/serversideuml.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.dat" beforeDir="false" afterPath="$PROJECT_DIR$/users.dat" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +17,7 @@
     <session id="1423473276">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -31,12 +25,12 @@
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.36" value="2" />
           <entry key="project.open.time.38" value="1" />
-          <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.40" value="2" />
           <entry key="project.open.time.42" value="3" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.52" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,8 +41,8 @@
           <entry key="dejong" value="2" />
           <entry key="gitignore" value="2" />
           <entry key="iml" value="1" />
-          <entry key="java" value="635" />
-          <entry key="md" value="2" />
+          <entry key="java" value="643" />
+          <entry key="md" value="3" />
           <entry key="png" value="1" />
           <entry key="puml" value="2" />
           <entry key="server" value="5" />
@@ -61,8 +55,8 @@
           <entry key="Git file" value="2" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="635" />
-          <entry key="Markdown" value="2" />
+          <entry key="JAVA" value="643" />
+          <entry key="Markdown" value="3" />
           <entry key="PlantUML file" value="2" />
           <entry key="UML" value="17" />
         </counts>
@@ -70,13 +64,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="92" />
-          <entry key="java" value="39548" />
+          <entry key="java" value="39596" />
+          <entry key="md" value="156" />
           <entry key="puml" value="333" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="39548" />
+          <entry key="JAVA" value="39596" />
+          <entry key="Markdown" value="156" />
           <entry key="PLAIN_TEXT" value="92" />
           <entry key="PlantUML file" value="333" />
         </counts>
@@ -88,34 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="57" column="63" lean-forward="true" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/DTLSEngine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="550" column="18" selection-start-line="550" selection-start-column="18" selection-end-line="550" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#24566#24567#0" expanded="true" />
-                <element signature="e#24623#24624#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="295">
+              <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -123,10 +93,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+            <state relative-caret-position="185">
+              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3276#3277#0" expanded="true" />
+                <element signature="e#3311#3312#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,17 +168,18 @@
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/server/DTLSFileTransferServer.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/server/MyDTLSServerDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/client/MyDTLSClientDatagramSocket.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/utils/DTLSClientUtilities.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestServer.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestClient.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientServerDatagramSocket.java" />
-        <option value="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/utils/SSLClientServerDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/server/FileTransferServer.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/server/MyServerDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java" />
         <option value="$PROJECT_DIR$/src/com/dejong/dtls/DTLSEngine.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java" />
       </list>
     </option>
   </component>
@@ -204,9 +189,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
@@ -214,6 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -265,7 +251,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,7 +259,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554495638112" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554498591211" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/uml/overalluml.png" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -407,11 +392,12 @@
       <workItem from="1553562021346" duration="1728000" />
       <workItem from="1554133750545" duration="27208000" />
       <workItem from="1554392158688" duration="2939000" />
+      <workItem from="1554497870532" duration="573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155771000" />
+    <option name="totallyTimeSpent" value="156656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -426,7 +412,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21275167" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -435,13 +421,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32163742" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.85982656" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5867052" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39884394" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32894737" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.49269006" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.4913295" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3251445" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32658958" />
@@ -683,16 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="315">
-            <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/SeedUsers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="804">
@@ -727,9 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -751,10 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="413" column="29" selection-start-line="413" selection-start-column="29" selection-end-line="413" selection-end-column="29" />
-          <folding>
-            <element signature="e#12491#12492#0" expanded="true" />
-            <element signature="e#12542#12543#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,9 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,7 +776,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.8371769383697812" x="657.6548004314996" y="575.7667206040993" />
+          <settings layout="Hierarchic Group" zoom="0.8371769383697812" x="658.0" y="576.0" />
           <SelectedNodes />
           <Categories>
             <Category>Constructors</Category>
@@ -845,13 +811,13 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="540.0" y="600.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="540.0" y="601.0" />
           <SelectedNodes />
           <Categories>
-            <Category>Inner Classes</Category>
-            <Category>Properties</Category>
-            <Category>Methods</Category>
             <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
@@ -868,16 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/test/DTLSTestClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -888,41 +844,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/DTLSEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        <state relative-caret-position="404">
+          <caret line="572" lean-forward="true" selection-start-line="572" selection-end-line="572" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#24566#24567#0" expanded="true" />
+            <element signature="e#24623#24624#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="538">
+            <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dejong/client/MyClientDatagramSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="57" column="63" lean-forward="true" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+        <state relative-caret-position="295">
+          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dejong/dtls/DTLSEngine.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/ClientHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="550" column="18" selection-start-line="550" selection-start-column="18" selection-end-line="550" selection-end-column="18" />
+        <state relative-caret-position="185">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#24566#24567#0" expanded="true" />
-            <element signature="e#24623#24624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="110" column="28" lean-forward="true" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dejong/utils/ClientUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3311#3312#0" expanded="true" />
           </folding>
         </state>
       </provider>

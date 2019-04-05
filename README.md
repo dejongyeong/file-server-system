@@ -11,7 +11,11 @@ Client Functionalities:
 
 Server Functionalities:
 * Execute functionalities requested by user mentioned above.
-* DTLS implementation to secure communication (Java 9 API and above).
+* DTLS implementation to secure communication on UDP-based application (Java 9 API and above).
+
+DTLSEngine and DTLSOverDatagram were referenced based on OpenJDK.
+* [DTLSEngine](http://cr.openjdk.java.net/~asmotrak/8159416/webrev.08/test/javax/net/ssl/DTLS/DTLSOverDatagram.java.html)
+* [DTLSOverDatagram](http://cr.openjdk.java.net/~amjiang/8145849/webrev.02/test/javax/net/ssl/ALPN/SSLEngineAlpnTest.java.html)
 
 Protocol message was designed based on [RFC 768](https://www.ietf.org/rfc/rfc959.txt) and reference to [RFC 959](https://tools.ietf.org/html/rfc768). Table below shows a summary of server response code and its response message.
 

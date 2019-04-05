@@ -13,8 +13,17 @@ import java.io.IOException;
 
 public class ClientUtilities {
 
-    private static String hostname = "localhost";
-    private static String port = "7";
+    private static ClientHelper helper;
+
+    static {
+        try {
+            String hostname = "localhost";
+            String port = "7";
+            helper = new ClientHelper(hostname, port);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * Client login utility class.
@@ -23,8 +32,7 @@ public class ClientUtilities {
      * @return server response in string.
      * @throws IOException
      */
-    public static String login(String username, String password) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+    public static String login(String username, String password) {
         String message = "300" + " " + username + " " + password; //client message to server
         String echo = helper.sendAndReceive(message);
         return echo;
@@ -36,8 +44,7 @@ public class ClientUtilities {
      * @return server response in string.
      * @throws IOException
      */
-    public static String logout(String username) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+    public static String logout(String username) {
         String message = "400" + " " + username; //client message to server
         String echo =  helper.sendAndReceive(message);
         return echo;
@@ -50,8 +57,7 @@ public class ClientUtilities {
      * @return server response in string.
      * @throws IOException
      */
-    public static String register(String username, String password) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+    public static String register(String username, String password) {
         String message = "500" + " " + username + " " + password; //client message to server
         String echo =  helper.sendAndReceive(message);
         return echo;
@@ -64,8 +70,7 @@ public class ClientUtilities {
      * @return server response in string.
      * @throws IOException
      */
-    public static String upload(String username, String filename) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+    public static String upload(String username, String filename) {
         String message = "600" + " " + username + " " + filename;
         String echo =  helper.sendAndReceive(message);
         return echo;
@@ -78,8 +83,7 @@ public class ClientUtilities {
      * @return server response in string.
      * @throws IOException
      */
-    public static String download(String username, String filename) throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+    public static String download(String username, String filename) {
         String message = "700" + " " + username + " " + filename;
         String echo =  helper.sendAndReceive(message);
         return echo;
@@ -89,8 +93,7 @@ public class ClientUtilities {
      * Client disconnect from server, shutdown client.
      * @throws IOException
      */
-    public static void shutdown() throws IOException {
-        ClientHelper helper = new ClientHelper(hostname, port);
+    public static void shutdown() {
         helper.disconnect();
     }
 } //end class
