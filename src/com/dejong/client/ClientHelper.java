@@ -1,5 +1,7 @@
 package com.dejong.client;
 
+import com.dejong.dtls.DTLSEngine;
+
 import java.io.IOException;
 import java.net.InetAddress;
 
@@ -15,26 +17,40 @@ import java.net.InetAddress;
 
 public class ClientHelper {
 
-    private MyClientDatagramSocket mySocket;
+    private MyClientDatagramSocket socket;
     private InetAddress serverHost;
     private int serverPort;
 
+    //constructor
     public ClientHelper(String hostname, String portNum) throws IOException {
         this.serverHost = InetAddress.getByName(hostname);
         this.serverPort = Integer.parseInt(portNum);
 
         // instantiates datagram socket for both sending and receiving data
-        this.mySocket = new MyClientDatagramSocket();
+        this.socket = new MyClientDatagramSocket();
     }
 
-    public String send(String message) throws IOException {
-        mySocket.sendMessage(serverHost, serverPort, message);
+    //send and receive
+    public String sendAndReceive(String message) {
+        try {
+            //set ssl engine
+            socket.setSSLEngine(DTLSEngine.createSSLEngine(true));
 
-        // receive echo
-        return mySocket.receiveMessage();
+            //send message
+            socket.sendMessage(serverHost, serverPort, message);
+
+            // receive echo
+            return socket.receiveMessage(serverHost, serverPort).getMessage();
+
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        } //end catch
+
+        return null;
     } // end receive echo/message
 
-    public void done() {
-        mySocket.close();
+    //disconnect from server
+    public void disconnect() {
+        socket.disconnect();
     }
 }

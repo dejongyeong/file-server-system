@@ -26,7 +26,7 @@ public class ClientUtilities {
     public static String login(String username, String password) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
         String message = "300" + " " + username + " " + password; //client message to server
-        String echo = helper.send(message);
+        String echo = helper.sendAndReceive(message);
         return echo;
     }
 
@@ -39,7 +39,7 @@ public class ClientUtilities {
     public static String logout(String username) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
         String message = "400" + " " + username; //client message to server
-        String echo = helper.send(message);
+        String echo =  helper.sendAndReceive(message);
         return echo;
     }
 
@@ -53,7 +53,7 @@ public class ClientUtilities {
     public static String register(String username, String password) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
         String message = "500" + " " + username + " " + password; //client message to server
-        String echo = helper.send(message);
+        String echo =  helper.sendAndReceive(message);
         return echo;
     }
 
@@ -67,7 +67,7 @@ public class ClientUtilities {
     public static String upload(String username, String filename) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
         String message = "600" + " " + username + " " + filename;
-        String echo = helper.send(message);
+        String echo =  helper.sendAndReceive(message);
         return echo;
     }
 
@@ -81,7 +81,7 @@ public class ClientUtilities {
     public static String download(String username, String filename) throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
         String message = "700" + " " + username + " " + filename;
-        String echo = helper.send(message);
+        String echo =  helper.sendAndReceive(message);
         return echo;
     }
 
@@ -91,6 +91,6 @@ public class ClientUtilities {
      */
     public static void shutdown() throws IOException {
         ClientHelper helper = new ClientHelper(hostname, port);
-        helper.done();
+        helper.disconnect();
     }
 } //end class

@@ -1,12 +1,11 @@
 package com.dejong.server;
 
+import com.dejong.dtls.server.MyDTLSServerDatagramSocket;
 import com.dejong.utils.SeedUsers;
 import com.dejong.utils.ServerUtilities;
 import com.dejong.utils.Users;
 
-import javax.net.ssl.*;
-import java.io.FileInputStream;
-import java.security.KeyStore;
+import java.net.InetAddress;
 import java.util.List;
 
 /**
@@ -22,23 +21,15 @@ import java.util.List;
  *
  */
 
+@SuppressWarnings("Duplicates")
 public class FileTransferServer {
 
     //variables
-    static int serverPort = 7; // default port
-    static MyServerDatagramSocket socket;
-    static String keystoreFile = "fms.jks";
-    static String keyStorePwd = "ittralee";
+    static int clientPort = 8;
+    static String hostname = "localhost";
 
     //main method to run server.
     public static void main(String[] args) {
-        //ssl communication
-        System.setProperty("javax.net.ssl.keyStore", keystoreFile);
-        System.setProperty("javax.net.ssl.keyStorePassword", keyStorePwd);
-
-        //uncomment to check for debug.
-        //System.setProperty("javax.net.debug", "all");
-
         //variables
         String code;
         String username;
@@ -47,23 +38,9 @@ public class FileTransferServer {
         String filename;
 
         try {
-            //ssl secure communication
-            KeyStore ks = KeyStore.getInstance("JKS");
-            ks.load(new FileInputStream(keystoreFile), keyStorePwd.toCharArray());
+            //initialize socket
+            MyServerDatagramSocket socket = new MyServerDatagramSocket();
 
-            KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509"); // Type of Certificate
-            kmf.init(ks, keyStorePwd.toCharArray());
-
-            TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509"); //truststore
-            tmf.init(ks);
-
-            SSLContext sc = SSLContext.getInstance("DTLS");
-            sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
-
-            SSLEngine engine = sc.createSSLEngine("localhost", serverPort);
-            engine.setUseClientMode(false);
-
-            socket = new MyServerDatagramSocket(serverPort);
             System.out.println("\n------File Management Server ready------");
 
             //display list of users in server
@@ -71,7 +48,7 @@ public class FileTransferServer {
 
             while(true) { //loop forever
                 //send and receive data
-                DatagramMessage request = socket.receiveMessageAndSender();
+                DatagramMessage request = socket.receiveMessage(InetAddress.getByName(hostname), clientPort);
                 System.out.println("request received");
                 String message = request.getMessage();
                 System.out.println("message received: " + message);

@@ -2,15 +2,9 @@ package com.dejong.client;
 
 import com.dejong.utils.ClientUtilities;
 
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
-import javax.net.ssl.TrustManagerFactory;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.security.KeyStore;
 
 /**
  * This module contains presentation logic of a client
@@ -19,18 +13,7 @@ import java.security.KeyStore;
 
 public class Client {
 
-    //keystore details
-    static String keystoreFile = "public.jks";
-    static String keyStorePwd = "ittralee";
-
     public static void main(String args[]) {
-        //ssl communication
-        System.setProperty("javax.net.ssl.keyStore", keystoreFile);
-        System.setProperty("javax.net.ssl.keyStorePassword", keyStorePwd);
-
-        //uncomment to check for debug
-        System.setProperty("javax.net.debug", "all");
-
         //variables
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         boolean done = false;
@@ -42,24 +25,6 @@ public class Client {
         String file;
 
         try {
-            //ssl secure communication
-            KeyStore ks = KeyStore.getInstance("JKS");
-            ks.load(new FileInputStream(keystoreFile), keyStorePwd.toCharArray());
-
-            KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509"); // Type of Certificate
-            kmf.init(ks, keyStorePwd.toCharArray());
-
-            TrustManagerFactory tmf = TrustManagerFactory.getInstance("SunX509"); //truststore
-            tmf.init(ks);
-
-            SSLContext sc = SSLContext.getInstance("DTLS");
-            sc.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
-
-            SSLEngine engine = sc.createSSLEngine("localhost", 7);
-            engine.setUseClientMode(true);
-
-            engine.beginHandshake();
-
             System.out.println("\n------Welcome to File Management System------");
 
             //program loop
