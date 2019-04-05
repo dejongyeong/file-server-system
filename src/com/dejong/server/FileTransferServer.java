@@ -1,6 +1,5 @@
 package com.dejong.server;
 
-import com.dejong.dtls.server.MyDTLSServerDatagramSocket;
 import com.dejong.utils.SeedUsers;
 import com.dejong.utils.ServerUtilities;
 import com.dejong.utils.Users;
